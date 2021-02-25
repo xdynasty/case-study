@@ -6,12 +6,46 @@ $(() => {
     'https://th.bing.com/th/id/OIP.jolYGxsmIwxGCtwX24-fYwHaE7',
   ];
 
-  $('#color').click(() => {
-    $('.options').toggleClass('show');
+  $('html').click((e) => {
+    // console.log('visible:', $('.color-options').is(':visible'));
+    if (
+      !$(e.target).closest('.color-options').length &&
+      !$(e.target).closest('#colorSelection').length &&
+      $('.color-options').is(':visible')
+    ) {
+      $('.color-options').hide();
+    }
+    if (
+      !$(e.target).closest('.size-options').length &&
+      !$(e.target).closest('#sizeSelection').length &&
+      $('.size-options').is(':visible')
+    ) {
+      $('.size-options').hide();
+    }
   });
 
-  $('.option').click(function () {
-    console.log($(this).data('value'));
-    $('#color').text($(this).data('value'));
+  $('#carousel img').click(function () {
+    console.log('clicked');
+    console.log($(this).attr('src'));
+    $('#mainImg').attr('src', $(this).attr('src'));
+  });
+
+  $('#colorSelection').click(() => {
+    if (!$('.color-options').is(':visible')) $('.color-options').show();
+    else $('.color-options').hide();
+  });
+  $('#sizeSelection').click(() => {
+    if (!$('.size-options').is(':visible')) $('.size-options').show();
+    else $('.size-options').hide();
+  });
+
+  $('.color-option').click(function () {
+    $('.color-options').hide();
+    $('#colorSelection').text($(this).data('value'));
+  });
+
+  $('.size-option').click(function () {
+    $('.size-options').hide();
+    $('#sizeSelection').text($(this).data('value'));
   });
 });

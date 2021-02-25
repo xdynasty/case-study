@@ -74,30 +74,103 @@
           <div class="col-md col-sm-12 d-flex justify-content-center">
             <img
               src="https://th.bing.com/th/id/OIP.YVhCc6EJPGY-rieLuOXmegHaLG?pid=ImgDet&rs=1"
-              id="main-img"
+              id="mainImg"
             />
           </div>
           <div class="col-md col-sm-12">
-            <p>PRODUCT DESCRIPTION</p>
-            <p>PRICE</p>
+            <div class="row">
+              <div class="col"><p>PRODUCT DESCRIPTION</p></div>
+            </div>
+            <div class="row">
+              <div class="col"><p>PRICE</p></div>
+            </div>
 
             <div class="row">
               <div class="col">
                 <label for="color">COLOR</label>
                 <div id="color">
-                  OPTION 1
-                  <div class="options">
-                    <div class="option" data-value="1" id="option1">
+                  <div id="colorSelection">OPTION 1</div>
+                  <div class="color-options options">
+                    <div class="color-option" data-value="OPTION 1">
                       OPTION 1
                     </div>
-                    <div class="option" data-value="2">OPTION 2</div>
-                    <div class="option" data-value="3">OPTION 3</div>
+                    <div class="color-option" data-value="OPTION 2">
+                      OPTION 2
+                    </div>
+                    <div class="color-option" data-value="OPTION 3">
+                      OPTION 3
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="col">
                 <label for="size">SIZE</label>
-                <div id="size"></div>
+                <div id="size">
+                  <div id="sizeSelection">OPTION 1</div>
+                  <div class="size-options options">
+                    <div class="size-option" data-value="OPTION 1">
+                      OPTION 1
+                    </div>
+                    <div class="size-option" data-value="OPTION 2">
+                      OPTION 2
+                    </div>
+                    <div class="size-option" data-value="OPTION 3">
+                      OPTION 3
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <p>IN STOCK</p>
+                <div class="d-grid">
+                  <button
+                    type="submit"
+                    id="addBtn"
+                    class="button btn-dark"
+                    data-bs-toggle="modal"
+                    data-bs-target="#cartModal"
+                  >
+                    ADD TO SHOPPING CART
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div
+                  class="accordion accordion-flush"
+                  id="accordionFlushExample"
+                >
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne"
+                        aria-expanded="false"
+                        aria-controls="flush-collapseOne"
+                      >
+                        Accordion Item #1
+                      </button>
+                    </h2>
+                    <div
+                      id="flush-collapseOne"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="flush-headingOne"
+                      data-bs-parent="#accordionFlushExample"
+                    >
+                      <div class="accordion-body">
+                        Placeholder content for this accordion, which is
+                        intended to demonstrate the
+                        <code>.accordion-flush</code> class. This is the first
+                        item's accordion body.
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -112,6 +185,55 @@
           </div>
         </div>
       </footer>
+    </div>
+
+    <div class="modal" id="cartModal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">Modal title</h3>
+            <button type="button" class="btn-close" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col">BRAND</div>
+                <div class="col"></div>
+              </div>
+              <div class="row">
+                <div class="col">MODEL</div>
+                <div class="col"></div>
+              </div>
+              <div class="row">
+                <div class="col">PRICE</div>
+                <div class="col"></div>
+              </div>
+              <div class="row">
+                <div class="col">COLOR</div>
+                <div class="col"></div>
+              </div>
+              <div class="row">
+                <div class="col">SIZE</div>
+                <div class="col"></div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="d-grid">
+                    <button type="button" class="btn btn-dark">
+                      CONTINUE SHOPPING
+                    </button>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="d-grid">
+                    <button type="button" class="btn btn-dark">CHECKOUT</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script
