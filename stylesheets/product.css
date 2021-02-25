@@ -1,0 +1,40 @@
+#carousel {
+  height: 510px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+#carousel::-webkit-scrollbar {
+  display: none;
+}
+#carousel img {
+  height: 170px;
+  object-fit: cover;
+}
+
+#main-img {
+  max-height: 510px;
+  width: 90%;
+  object-fit: cover;
+}
+
+#color {
+  border-bottom: 1px solid black;
+  cursor: default;
+  position: relative;
+}
+.options {
+  display: none;
+  border: 1px solid blue;
+  position: absolute;
+  width: 100%;
+}
+
+.option:hover {
+  background: #fbfbfb;
+}
+
+.show {
+  display: block;
+}

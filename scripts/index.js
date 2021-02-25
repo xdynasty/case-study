@@ -13,5 +13,5 @@ $(() => {
     flashEle.text(flashMsgs[flashMsgI]);
   }
 
-  setInterval(changeCurrFlashMsg, 2000);
+  setInterval(changeCurrFlashMsg, 1500);
 });

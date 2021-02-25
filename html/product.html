@@ -14,7 +14,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" type="text/css" href="../stylesheets/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../stylesheets/display.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/product.css" />
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
@@ -55,64 +55,50 @@
       </div>
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-2 col-sm-12">asdf</div>
-          <div class="col-md-10 col-sm-12 tile-container">
-            <div class="tile">
-              <a href="#">
-                <div class="inner">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Australian_Catle_Dog_Silverbarn's_Paavo.jpg"
-                    class="tile-img"
-                    id="img1"
-                  />
-                  <p class="product-name">NAME</p>
-                  <p class="price">$500</p>
-                  <p class="size-availability">S|M|L</p>
-                </div>
-              </a>
+          <div class="col-md-2 col-sm-12">
+            <div id="carousel">
+              <img
+                src="https://th.bing.com/th/id/OIP.Jf0NnGpH2AhNM3BtwZufwwHaJ4?w=117&h=180&c=7&o=5&dpr=2&pid=1.7"
+              />
+              <img
+                src="https://th.bing.com/th/id/OIP.YVhCc6EJPGY-rieLuOXmegHaLG?pid=ImgDet&rs=1"
+              />
+              <img
+                src="https://i.pinimg.com/originals/50/b8/4c/50b84c2c87f6bc767bd0fdac2e8fda26.png"
+              />
+              <img
+                src="https://th.bing.com/th/id/OIP.jolYGxsmIwxGCtwX24-fYwHaE7"
+              />
             </div>
+          </div>
+          <div class="col-md col-sm-12 d-flex justify-content-center">
+            <img
+              src="https://th.bing.com/th/id/OIP.YVhCc6EJPGY-rieLuOXmegHaLG?pid=ImgDet&rs=1"
+              id="main-img"
+            />
+          </div>
+          <div class="col-md col-sm-12">
+            <p>PRODUCT DESCRIPTION</p>
+            <p>PRICE</p>
 
-            <div class="tile">
-              <a href="#">
-                <div class="inner">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Australian_Catle_Dog_Silverbarn's_Paavo.jpg"
-                    class="tile-img"
-                    id="img1"
-                  />
-                  <p class="product-name">NAME</p>
-                  <p class="price">$500</p>
-                  <p class="size-availability">S|M|L</p>
+            <div class="row">
+              <div class="col">
+                <label for="color">COLOR</label>
+                <div id="color">
+                  OPTION 1
+                  <div class="options">
+                    <div class="option" data-value="1" id="option1">
+                      OPTION 1
+                    </div>
+                    <div class="option" data-value="2">OPTION 2</div>
+                    <div class="option" data-value="3">OPTION 3</div>
+                  </div>
                 </div>
-              </a>
-            </div>
-            <div class="tile">
-              <a href="#">
-                <div class="inner">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Australian_Catle_Dog_Silverbarn's_Paavo.jpg"
-                    class="tile-img"
-                    id="img1"
-                  />
-                  <p class="product-name">NAME</p>
-                  <p class="price">$500</p>
-                  <p class="size-availability">S|M|L</p>
-                </div>
-              </a>
-            </div>
-            <div class="tile">
-              <a href="#">
-                <div class="inner">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Australian_Catle_Dog_Silverbarn's_Paavo.jpg"
-                    class="tile-img"
-                    id="img1"
-                  />
-                  <p class="product-name">NAME</p>
-                  <p class="price">$500</p>
-                  <p class="size-availability">S|M|L</p>
-                </div>
-              </a>
+              </div>
+              <div class="col">
+                <label for="size">SIZE</label>
+                <div id="size"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -133,6 +119,6 @@
       integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
       crossorigin="anonymous"
     ></script>
-    <script src="../scripts/display.js"></script>
+    <script src="../scripts/product.js"></script>
   </body>
 </html>
