@@ -2,15 +2,6 @@
   --panel-height: 500px;
 }
 
-#flash {
-  color: white;
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  font-size: 11px;
-}
-
 h1 {
   text-align: center;
 }
