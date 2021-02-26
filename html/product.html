@@ -23,134 +23,117 @@
     ></script>
   </head>
   <body>
-    <div id="main">
-      <header class="container-fluid bg-dark">
-        <div class="row">
-          <div class="col"><div id="flash"></div></div>
+    <header class="container-fluid bg-dark">
+      <div class="row">
+        <div class="col"><div id="flash"></div></div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h1 style="color: white">
+            <a href="/">XYZ</a>
+          </h1>
         </div>
-        <div class="row">
-          <div class="col">
-            <h1 style="color: white">
-              <a href="/">XYZ</a>
-            </h1>
-          </div>
-        </div>
-      </header>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-2 col-sm-12">
-            <div id="carousel">
-              <img
-                src="https://th.bing.com/th/id/OIP.Jf0NnGpH2AhNM3BtwZufwwHaJ4?w=117&h=180&c=7&o=5&dpr=2&pid=1.7"
-              />
-              <img
-                src="https://th.bing.com/th/id/OIP.YVhCc6EJPGY-rieLuOXmegHaLG?pid=ImgDet&rs=1"
-              />
-              <img
-                src="https://i.pinimg.com/originals/50/b8/4c/50b84c2c87f6bc767bd0fdac2e8fda26.png"
-              />
-              <img
-                src="https://th.bing.com/th/id/OIP.jolYGxsmIwxGCtwX24-fYwHaE7"
-              />
-            </div>
-          </div>
-          <div class="col-md col-sm-12 d-flex justify-content-center">
+      </div>
+    </header>
+    <div class="container-fluid" id="main">
+      <div class="row">
+        <div class="col-md-2 col-sm-12">
+          <div id="carousel">
+            <img
+              src="https://th.bing.com/th/id/OIP.Jf0NnGpH2AhNM3BtwZufwwHaJ4?w=117&h=180&c=7&o=5&dpr=2&pid=1.7"
+            />
             <img
               src="https://th.bing.com/th/id/OIP.YVhCc6EJPGY-rieLuOXmegHaLG?pid=ImgDet&rs=1"
-              id="mainImg"
+            />
+            <img
+              src="https://i.pinimg.com/originals/50/b8/4c/50b84c2c87f6bc767bd0fdac2e8fda26.png"
+            />
+            <img
+              src="https://th.bing.com/th/id/OIP.jolYGxsmIwxGCtwX24-fYwHaE7"
             />
           </div>
-          <div class="col-md col-sm-12">
-            <div class="row">
-              <div class="col"><p>PRODUCT DESCRIPTION</p></div>
-            </div>
-            <div class="row">
-              <div class="col"><p>PRICE</p></div>
-            </div>
+        </div>
+        <div class="col-md col-sm-12 d-flex justify-content-center">
+          <img
+            src="https://th.bing.com/th/id/OIP.YVhCc6EJPGY-rieLuOXmegHaLG?pid=ImgDet&rs=1"
+            id="mainImg"
+          />
+        </div>
+        <div class="col-md col-sm-12">
+          <div class="row">
+            <div class="col"><p>PRODUCT DESCRIPTION</p></div>
+          </div>
+          <div class="row">
+            <div class="col"><p>PRICE</p></div>
+          </div>
 
-            <div class="row">
-              <div class="col">
-                <label for="color">COLOR</label>
-                <div id="color">
-                  <div id="colorSelection">OPTION 1</div>
-                  <div class="color-options options">
-                    <div class="color-option" data-value="OPTION 1">
-                      OPTION 1
-                    </div>
-                    <div class="color-option" data-value="OPTION 2">
-                      OPTION 2
-                    </div>
-                    <div class="color-option" data-value="OPTION 3">
-                      OPTION 3
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <label for="size">SIZE</label>
-                <div id="size">
-                  <div id="sizeSelection">OPTION 1</div>
-                  <div class="size-options options">
-                    <div class="size-option" data-value="OPTION 1">
-                      OPTION 1
-                    </div>
-                    <div class="size-option" data-value="OPTION 2">
-                      OPTION 2
-                    </div>
-                    <div class="size-option" data-value="OPTION 3">
-                      OPTION 3
-                    </div>
-                  </div>
+          <div class="row">
+            <div class="col">
+              <label for="color">COLOR</label>
+              <div id="color">
+                <div id="colorSelection">OPTION 1</div>
+                <div class="color-options options">
+                  <div class="color-option" data-value="OPTION 1">OPTION 1</div>
+                  <div class="color-option" data-value="OPTION 2">OPTION 2</div>
+                  <div class="color-option" data-value="OPTION 3">OPTION 3</div>
                 </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col">
-                <p>IN STOCK</p>
-                <div class="d-grid">
-                  <button
-                    type="submit"
-                    id="addBtn"
-                    class="button btn-dark"
-                    data-bs-toggle="modal"
-                    data-bs-target="#bagModal"
-                  >
-                    ADD TO SHOPPING bag
-                  </button>
+            <div class="col">
+              <label for="size">SIZE</label>
+              <div id="size">
+                <div id="sizeSelection">OPTION 1</div>
+                <div class="size-options options">
+                  <div class="size-option" data-value="OPTION 1">OPTION 1</div>
+                  <div class="size-option" data-value="OPTION 2">OPTION 2</div>
+                  <div class="size-option" data-value="OPTION 3">OPTION 3</div>
                 </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col">
-                <div
-                  class="accordion accordion-flush"
-                  id="accordionFlushExample"
+          </div>
+          <div class="row">
+            <div class="col">
+              <p>IN STOCK</p>
+              <div class="d-grid">
+                <button
+                  type="submit"
+                  id="addBtn"
+                  class="button btn-dark"
+                  data-bs-toggle="modal"
+                  data-bs-target="#bagModal"
                 >
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                      <button
-                        class="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseOne"
-                        aria-expanded="false"
-                        aria-controls="flush-collapseOne"
-                      >
-                        Accordion Item #1
-                      </button>
-                    </h2>
-                    <div
-                      id="flush-collapseOne"
-                      class="accordion-collapse collapse"
-                      aria-labelledby="flush-headingOne"
-                      data-bs-parent="#accordionFlushExample"
+                  ADD TO SHOPPING bag
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingOne">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseOne"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseOne"
                     >
-                      <div class="accordion-body">
-                        Placeholder content for this accordion, which is
-                        intended to demonstrate the
-                        <code>.accordion-flush</code> class. This is the first
-                        item's accordion body.
-                      </div>
+                      Accordion Item #1
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseOne"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingOne"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                      Placeholder content for this accordion, which is intended
+                      to demonstrate the
+                      <code>.accordion-flush</code> class. This is the first
+                      item's accordion body.
                     </div>
                   </div>
                 </div>
@@ -159,16 +142,16 @@
           </div>
         </div>
       </div>
-
-      <footer class="container-fluid">
-        <div class="row"><div class="col"></div></div>
-        <div class="row">
-          <div class="col text-center">
-            <small>Copyright © 2021 Junjie Xu. All Rights Reserved</small>
-          </div>
-        </div>
-      </footer>
     </div>
+
+    <footer class="container-fluid">
+      <div class="row"><div class="col"></div></div>
+      <div class="row">
+        <div class="col text-center">
+          <small>Copyright © 2021 Junjie Xu. All Rights Reserved</small>
+        </div>
+      </div>
+    </footer>
 
     <div class="modal" id="bagModal">
       <div class="modal-dialog modal-dialog-centered">
