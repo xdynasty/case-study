@@ -7,3 +7,7 @@
 .product-tile {
   margin: 10px auto;
 }
+
+section {
+  display: flex;
+}
