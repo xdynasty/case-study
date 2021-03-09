@@ -14,7 +14,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" type="text/css" href="../stylesheets/styles.css" />
-    <link rel="stylesheet" type="text/css" href="./stylesheets/flash.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/flash.css" />
     <link rel="stylesheet" type="text/css" href="../stylesheets/product.css" />
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -44,51 +44,30 @@
     <div class="container-fluid" id="main">
       <div class="row">
         <div class="col-md-2 col-sm-12">
-          <div id="carousel">
-            <img
-              src="https://th.bing.com/th/id/OIP.Jf0NnGpH2AhNM3BtwZufwwHaJ4?w=117&h=180&c=7&o=5&dpr=2&pid=1.7"
-            />
-            <img
-              src="https://th.bing.com/th/id/OIP.YVhCc6EJPGY-rieLuOXmegHaLG?pid=ImgDet&rs=1"
-            />
-            <img
-              src="https://i.pinimg.com/originals/50/b8/4c/50b84c2c87f6bc767bd0fdac2e8fda26.png"
-            />
-            <img
-              src="https://th.bing.com/th/id/OIP.jolYGxsmIwxGCtwX24-fYwHaE7"
-            />
-          </div>
+          <div id="carousel"></div>
         </div>
         <div class="col-md col-sm-12 d-flex justify-content-center">
-          <img
-            src="https://th.bing.com/th/id/OIP.YVhCc6EJPGY-rieLuOXmegHaLG?pid=ImgDet&rs=1"
-            id="mainImg"
-          />
+          <img id="mainImg" />
         </div>
         <div class="col-md col-sm-12">
           <div class="row">
-            <div class="col"><p>PRODUCT DESCRIPTION</p></div>
+            <div class="col"><p id="productName"></p></div>
           </div>
           <div class="row">
-            <div class="col"><p>PRICE</p></div>
+            <div class="col"><p id="price"></p></div>
           </div>
 
           <div class="row">
             <div class="col">
-              <label for="color">COLOR</label>
-              <div id="color">
-                <div id="colorSelection">OPTION 1</div>
-                <div class="color-options options">
-                  <div class="color-option" data-value="OPTION 1">OPTION 1</div>
-                  <div class="color-option" data-value="OPTION 2">OPTION 2</div>
-                  <div class="color-option" data-value="OPTION 3">OPTION 3</div>
-                </div>
+              <label for="style">STYLE</label>
+              <div id="style">
+                <div id="styleSelection"></div>
               </div>
             </div>
             <div class="col">
               <label for="size">SIZE</label>
               <div id="size">
-                <div id="sizeSelection">OPTION 1</div>
+                <div id="sizeSelection"></div>
                 <div class="size-options options">
                   <div class="size-option" data-value="OPTION 1">OPTION 1</div>
                   <div class="size-option" data-value="OPTION 2">OPTION 2</div>
@@ -108,7 +87,7 @@
                   data-bs-toggle="modal"
                   data-bs-target="#bagModal"
                 >
-                  ADD TO SHOPPING bag
+                  ADD TO SHOPPING BAG
                 </button>
               </div>
             </div>
@@ -181,7 +160,7 @@
                 <div class="col"></div>
               </div>
               <div class="row">
-                <div class="col">COLOR</div>
+                <div class="col">STYLE</div>
                 <div class="col"></div>
               </div>
               <div class="row">

@@ -23,9 +23,13 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  color: white;
+.active {
+  color: gray;
 }
+
+/* a:hover {
+  color: white;
+} */
 
 .panel-menu {
   height: 100%;
