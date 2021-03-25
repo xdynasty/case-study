@@ -55,4 +55,20 @@ public class QuantityDao extends AbstractDao implements QuantityI {
 		}
 	}
 
+	@Override
+	public int addQuantity(Quantity quantity) {
+		try {
+			connect();
+			em.getTransaction().begin();
+			em.persist(quantity);
+			em.getTransaction().commit();
+			return 1;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		} finally {
+			disconnect();
+		}
+	}
+
 }

@@ -2,6 +2,9 @@ package com.junjiexu.xyz.daos;
 
 import java.util.List;
 import javax.persistence.Query;
+
+import com.junjiexu.xyz.compositeIds.QuantityId;
+import com.junjiexu.xyz.entities.Quantity;
 import com.junjiexu.xyz.entities.Style;
 import com.junjiexu.xyz.interfaces.StyleI;
 
@@ -16,6 +19,35 @@ public class StyleDao extends AbstractDao implements StyleI {
 			query.setParameter("productId", productId);
 			List<Style> styles = query.getResultList();
 			return styles;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			disconnect();
+		}
+	}
+
+	@Override
+	public int addStyle(Style style) {
+		try {
+			connect();
+			em.getTransaction().begin();
+			em.persist(style);
+			em.getTransaction().commit();
+			return 1;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		} finally {
+			disconnect();
+		}
+	}
+
+	@Override
+	public Style getStyleById(int id) {
+		try {
+			connect();
+			return em.find(Style.class, id);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
