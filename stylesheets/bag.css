@@ -1,0 +1,13 @@
+.product-img {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.product-tile {
+  margin: 10px auto;
+}
+
+section {
+  display: flex;
+}
