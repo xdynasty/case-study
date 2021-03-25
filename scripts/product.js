@@ -11,6 +11,7 @@ $(() => {
       'Buy your usual size',
       'Composition: 71% Cotton, 12% Wool, 17% Polyamide',
     ],
+    price: 200,
     styleName: 'NAVY',
     relatedStyles: [
       { id: 2, styleName: 'BLACK' },
@@ -31,7 +32,14 @@ $(() => {
     ],
   };
 
+  let selectedSize;
+
   $('#styleSelection').text(product.styleName);
+
+  $('.accordion-body').append('<ul id="details">');
+  product.details.forEach((detail) => {
+    $(`<li>${detail}</li>`).appendTo($('#details'));
+  });
 
   product.images.forEach((image) => {
     $('<img>').attr('src', image).appendTo($('#carousel'));
@@ -61,6 +69,7 @@ $(() => {
         .click(() => {
           console.log(size);
           $('#sizeSelection').text(size.size);
+          selectedSize = size.size;
           $('.size-options').hide();
         })
         .appendTo(sizeOptions);
@@ -92,5 +101,24 @@ $(() => {
 
   $('#carousel img').click(function () {
     $('#mainImg').attr('src', $(this).attr('src'));
+  });
+
+  $('#addBtn').click(() => {
+    if (product.sizes.length > 1 && !selectedSize) {
+      console.log('selectedSize', selectedSize);
+      alert('MUST SELECT A SIZE');
+    } else {
+      console.log('selectedSize', selectedSize);
+      $('.modal-title').text(product.productName);
+      $('#modalStyleId').text(product.id);
+      $('#modalPrice').text(product.price);
+      $('#modalStyle').text(product.styleName);
+      $('#modalSize').text(selectedSize);
+      $('#bagModal').modal('show');
+    }
+  });
+
+  $('#checkoutBtn').click(() => {
+    location.href = '../html/checkout.html';
   });
 });

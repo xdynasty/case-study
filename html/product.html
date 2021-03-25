@@ -16,9 +16,14 @@
     <link rel="stylesheet" type="text/css" href="../stylesheets/styles.css" />
     <link rel="stylesheet" type="text/css" href="../stylesheets/flash.css" />
     <link rel="stylesheet" type="text/css" href="../stylesheets/product.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/navbar.css" />
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/b15d1bc6ae.js"
       crossorigin="anonymous"
     ></script>
   </head>
@@ -39,6 +44,9 @@
         <a class="nav-link" href="./women.html">WOMEN</a>
         <a class="nav-link" href="./kids.html">KIDS</a>
         <a class="nav-link" href="./home.html">HOME</a>
+        <a class="nav-link" href="./bag.html" id="bagIcon"
+          ><i class="fas fa-shopping-bag"></i
+        ></a>
       </nav>
     </header>
     <div class="container-fluid" id="main">
@@ -80,13 +88,7 @@
             <div class="col">
               <p>IN STOCK</p>
               <div class="d-grid">
-                <button
-                  type="submit"
-                  id="addBtn"
-                  class="button btn-dark"
-                  data-bs-toggle="modal"
-                  data-bs-target="#bagModal"
-                >
+                <button type="submit" id="addBtn" class="button btn-dark">
                   ADD TO SHOPPING BAG
                 </button>
               </div>
@@ -94,9 +96,9 @@
           </div>
           <div class="row">
             <div class="col">
-              <div class="accordion accordion-flush" id="accordionFlushExample">
+              <div class="accordion accordion-flush" id="accordion">
                 <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingOne">
+                  <h2 class="accordion-header">
                     <button
                       class="accordion-button collapsed"
                       type="button"
@@ -105,21 +107,16 @@
                       aria-expanded="false"
                       aria-controls="flush-collapseOne"
                     >
-                      Accordion Item #1
+                      DETAILS
                     </button>
                   </h2>
                   <div
                     id="flush-collapseOne"
                     class="accordion-collapse collapse"
                     aria-labelledby="flush-headingOne"
-                    data-bs-parent="#accordionFlushExample"
+                    data-bs-parent="#accordion"
                   >
-                    <div class="accordion-body">
-                      Placeholder content for this accordion, which is intended
-                      to demonstrate the
-                      <code>.accordion-flush</code> class. This is the first
-                      item's accordion body.
-                    </div>
+                    <div class="accordion-body"></div>
                   </div>
                 </div>
               </div>
@@ -142,42 +139,51 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h3 class="modal-title">Modal title</h3>
-            <button type="button" class="btn-close" aria-label="Close"></button>
+            <h3 class="modal-title"></h3>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-toggle="modal"
+              data-bs-target="#bagModal"
+              aria-label="Close"
+            ></button>
           </div>
           <div class="modal-body">
             <div class="container-fluid">
               <div class="row">
-                <div class="col">BRAND</div>
-                <div class="col"></div>
-              </div>
-              <div class="row">
-                <div class="col">MODEL</div>
-                <div class="col"></div>
+                <div class="col">Product No.</div>
+                <div class="col" id="modalStyleId"></div>
               </div>
               <div class="row">
                 <div class="col">PRICE</div>
-                <div class="col"></div>
+                <div class="col" id="modalPrice"></div>
               </div>
               <div class="row">
                 <div class="col">STYLE</div>
-                <div class="col"></div>
+                <div class="col" id="modalStyle"></div>
               </div>
               <div class="row">
                 <div class="col">SIZE</div>
-                <div class="col"></div>
+                <div class="col" id="modalSize"></div>
               </div>
               <div class="row">
                 <div class="col">
                   <div class="d-grid">
-                    <button type="button" class="btn btn-dark">
+                    <button
+                      type="button"
+                      data-bs-toggle="modal"
+                      data-bs-target="#bagModal"
+                      class="btn btn-dark"
+                    >
                       CONTINUE SHOPPING
                     </button>
                   </div>
                 </div>
                 <div class="col">
                   <div class="d-grid">
-                    <button type="button" class="btn btn-dark">CHECKOUT</button>
+                    <button type="button" class="btn btn-dark" id="checkoutBtn">
+                      CHECKOUT
+                    </button>
                   </div>
                 </div>
               </div>
