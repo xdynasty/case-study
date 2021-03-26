@@ -13,6 +13,8 @@ public class StyleDao extends AbstractDao implements StyleI {
 	@Override
 	public List<Style> getStylesByProductId(int productId) {
 		try {
+			System.out.println("addProduct");
+			System.out.println("productId: " + productId);
 			connect();
 			em.getTransaction().begin();
 			Query query = em.createQuery("SELECT s from Style s WHERE product_id = :productId", Style.class);
@@ -30,6 +32,8 @@ public class StyleDao extends AbstractDao implements StyleI {
 	@Override
 	public int addStyle(Style style) {
 		try {
+			System.out.println("addStyle");
+			System.out.println("style: " + style);
 			connect();
 			em.getTransaction().begin();
 			em.persist(style);
@@ -46,6 +50,8 @@ public class StyleDao extends AbstractDao implements StyleI {
 	@Override
 	public Style getStyleById(int id) {
 		try {
+			System.out.println("getStyleById");
+			System.out.println("id: " + id);
 			connect();
 			return em.find(Style.class, id);
 		} catch (Exception e) {

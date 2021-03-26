@@ -13,6 +13,8 @@ public class ProductDao extends AbstractDao implements ProductI{
 	@Override
 	public List<Product> getProductsByType(String type) {
 		try {
+			System.out.println("getProductsByType");
+			System.out.println("type: " + type);
 			connect();
 			Query query = em.createQuery("SELECT p from Product p WHERE p.type LIKE :type");
 			query.setParameter("type", type);
@@ -32,6 +34,8 @@ public class ProductDao extends AbstractDao implements ProductI{
 	@Override
 	public int addProduct(Product product) {
 		try {
+			System.out.println("addProduct");
+			System.out.println("product: " + product);
 			connect();
 			em.getTransaction().begin();
 			em.persist(product);
@@ -48,6 +52,8 @@ public class ProductDao extends AbstractDao implements ProductI{
 	@Override
 	public Product getProductById(int id) {
 		try {
+			System.out.println("getProductById");
+			System.out.println("id: " + id);
 			connect();
 			return em.find(Product.class, id);
 		} catch (Exception e) {

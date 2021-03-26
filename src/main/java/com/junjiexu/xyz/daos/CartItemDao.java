@@ -11,8 +11,10 @@ import com.junjiexu.xyz.interfaces.CartItemI;
 public class CartItemDao extends AbstractDao implements CartItemI{
 
 	@Override
-	public List<CartItem> getAllCartItems(String userId) {
+	public List<CartItem> getAllCartItemsByUserId(String userId) {
 		try {
+			System.out.println("getAllCartItemsByUserId");
+			System.out.println("userId: " + userId);
 			connect();
 			Query query = em.createQuery("SELECT ci from CartItem ci");
 			List<CartItem> cartItems = query.getResultList();
@@ -28,6 +30,8 @@ public class CartItemDao extends AbstractDao implements CartItemI{
 	@Override
 	public int addCartItem(CartItem ci) {
 		try {
+			System.out.println("addCartItem");
+			System.out.println("CartItem: " + ci);
 			connect();
 			em.getTransaction().begin();
 			em.persist(ci);
@@ -44,6 +48,9 @@ public class CartItemDao extends AbstractDao implements CartItemI{
 	@Override
 	public int removeCartItem(String userEmail, int styleId) {
 		try {
+			System.out.println("removeCartItem");
+			System.out.println("userEmail: " + userEmail);
+			System.out.println("styleId: " + styleId);
 			connect();
 			em.getTransaction().begin();
 			CartItem ci = em.find(CartItem.class, new CartItemId(userEmail, styleId));
@@ -64,6 +71,10 @@ public class CartItemDao extends AbstractDao implements CartItemI{
 	public int updateCartItemQuantity(String userEmail, int styleId, int quantity) {
 		
 		try {
+			System.out.println("updateCartItemQuantity");
+			System.out.println("userEmail: " + userEmail);
+			System.out.println("styleId: " + styleId);
+			System.out.println("quantity: " + quantity);
 			connect();
 			em.getTransaction().begin();
 			CartItem ci = em.find(CartItem.class, new CartItemId(userEmail, styleId));

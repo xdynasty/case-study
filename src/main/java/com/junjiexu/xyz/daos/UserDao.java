@@ -8,6 +8,8 @@ public class UserDao extends AbstractDao implements UserI {
 	@Override
 	public int addUser(User user) {
 		try {
+			System.out.println("addUser");
+			System.out.println("user: " + user);
 			connect();
 			em.getTransaction().begin();
 			em.persist(user);
@@ -24,6 +26,8 @@ public class UserDao extends AbstractDao implements UserI {
 	@Override
 	public User getUser(int userId) {
 		try {
+			System.out.println("getUser");
+			System.out.println("userId: " + userId);
 			connect();
 			return em.find(User.class, userId);
 		} catch (Exception e) {
