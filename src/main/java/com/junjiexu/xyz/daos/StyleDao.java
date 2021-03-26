@@ -17,7 +17,7 @@ public class StyleDao extends AbstractDao implements StyleI {
 			System.out.println("productId: " + productId);
 			connect();
 			em.getTransaction().begin();
-			Query query = em.createQuery("SELECT s from Style s WHERE product_id = :productId", Style.class);
+			Query query = em.createQuery("SELECT s from Style s WHERE s.product.id = :productId", Style.class);
 			query.setParameter("productId", productId);
 			List<Style> styles = query.getResultList();
 			return styles;

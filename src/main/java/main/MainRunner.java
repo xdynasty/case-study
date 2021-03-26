@@ -21,7 +21,9 @@ public class MainRunner {
 //		productDao.getProductsByType("MEN");
 //		QuantityDao quantityDao = new QuantityDao();
 //		quantityDao.updateQuantityByStyleIdAndSize(2, "30", 4);
-		populateTable();
+//		populateTable();
+		StyleDao styleDao = new StyleDao();
+		styleDao.getStylesByProductId(3).forEach(style -> System.out.println(style.getName()));
 		
 	}
 	
