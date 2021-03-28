@@ -62,4 +62,6 @@ public class StyleDao extends AbstractDao implements StyleI {
 		}
 	}
 
+	
+
 }

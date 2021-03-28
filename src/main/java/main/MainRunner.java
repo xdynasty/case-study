@@ -21,9 +21,9 @@ public class MainRunner {
 //		productDao.getProductsByType("MEN");
 //		QuantityDao quantityDao = new QuantityDao();
 //		quantityDao.updateQuantityByStyleIdAndSize(2, "30", 4);
-//		populateTable();
-		StyleDao styleDao = new StyleDao();
-		styleDao.getStylesByProductId(3).forEach(style -> System.out.println(style.getName()));
+		populateTable();
+//		StyleDao styleDao = new StyleDao();
+//		styleDao.getStylesByProductId(3).forEach(style -> System.out.println(style.getName()));
 		
 	}
 	
@@ -32,7 +32,7 @@ public class MainRunner {
 		productDao.addProduct(new Product(1, "LOGO OVER COTTON & WOOL KNIT SWEATER", "CLOTHING/KNITWEAR", new String[] {"Embroidered front logo", "Model is wearing a size M", "Model height: 1.88m", 
 				"Cut for an oversize fit",
 				"Buy your usual size",
-				"Composition: 71% Cotton, 12% Wool, 17% Polyamide}"}, "MEN"));
+				"Composition: 71% Cotton, 12% Wool, 17% Polyamide}"}, "MEN", null));
 		productDao.addProduct(new Product(2, "LOGO PATCH COTTON JERSEY SWEATPANTS", "CLOTHING/PANTS", 
 				new String[] {
 						"Elastic waistband with drawstring",
@@ -42,7 +42,7 @@ public class MainRunner {
 				"Model is wearing a size M",
 				"Model height: 1.88m",
 				"Buy your usual size",
-				"Composition: 100% Cotton"}, "MEN"));
+				"Composition: 100% Cotton"}, "MEN", null));
 		productDao.addProduct(new Product(3, "991 SNEAKERS", "SHOES/SNEAKERS", 
 				new String[] {
 						"Suede, leather and mesh upper",
@@ -51,7 +51,7 @@ public class MainRunner {
 						"Rubber sole",
 						"Fit: Buy one size above your usual size",
 						"Made in the UK",
-						"Composition: Pig"}, "MEN"));
+						"Composition: Pig"}, "MEN", null));
 		productDao.addProduct(new Product(4, "GUSSET FLAT LEATHER CROSSBODY BAG", "BAGS/CROSSBODY & MESSENGER BAGS", 
 				new String[] {
 						"Height: 13cm Width: 17cm Depth: 4cm",
@@ -60,10 +60,10 @@ public class MainRunner {
 						"Logo details",
 						"One back zip pocket",
 						"Internal card slots",
-						"Composition: 92% Calf, 8% Polyester"}, "MEN"));
+						"Composition: 92% Calf, 8% Polyester"}, "MEN", null));
 		productDao.addProduct(new Product(5, "Y-3 CLASSIC NYLON BUCKET HAT", "ACCESSORIES/HATS", 
 				new String[] {
-						"Front logo","Composition: 100% Polyester"}, "MEN"));
+						"Front logo","Composition: 100% Polyester"}, "MEN", null));
 		productDao.addProduct(new Product(6, "DB ROUND ACETATE OPTICAL GLASSES", "ACCESSORIES/EYEWEAR", 
 				new String[] {
 						"Lens: 40mm Bridge: 22mm Temple: 145mm",
@@ -72,12 +72,12 @@ public class MainRunner {
 						"DB logo at the end of the tips",
 						"International fitting",
 						"Arrive with temporary lenses, that must be removed before use",
-						"Composition: Acetate"}, "MEN"));
+						"Composition: Acetate"}, "MEN", null));
 		productDao.addProduct(new Product(7, "BIRD BASEBALL HAT", "ACCESSORIES/HATS", 
 				new String[] {
 						"Adjustable strap at back",
 						"Front logo detail",
-						"Composition: 62% Cotton, 38% Polyeste"}, "MEN"));
+						"Composition: 62% Cotton, 38% Polyeste"}, "MEN", null));
 		productDao.addProduct(new Product(8, "LEATHER TRAVELER GYM BAG", "BAGS/BACKPACKS", 
 				new String[] {
 						"Height: 20cm Width: 43cm Depth: 26cm",
@@ -91,7 +91,7 @@ public class MainRunner {
 						"Made in Italy",
 						"Composition:",
 						"Main: 100% Lamb",
-						"Lining: 100% Cotton"}, "MEN"));
+						"Lining: 100% Cotton"}, "MEN", null));
 		productDao.addProduct(new Product(9, "MILITARY LEATHER BACKPACK", "BAGS/BACKPACKS", 
 				new String[] {
 					"Height: 39cm Width: 28.5cm Depth: 11cm",
@@ -104,7 +104,7 @@ public class MainRunner {
 					"Composition:",
 					"Main 1: Calf",
 					"Main 2: Cotton",
-					"Main 3: Polyester"}, "MEN"));
+					"Main 3: Polyester"}, "MEN", null));
 		productDao.addProduct(new Product(10, "IVY LINEN & SILK BOMBER JACKET", "CLOTHING/JACKETS", 
 				new String[] {
 					"Front zip closure",
@@ -117,26 +117,26 @@ public class MainRunner {
 					"Made in Italy",
 					"Composition:",
 					"Main: 59% Linen, 41% Silk",
-					"Lining: Polyester"}, "MEN"));
+					"Lining: Polyester"}, "MEN", null));
 		productDao.addProduct(new Product(11, "TICKET PRINTED COTTON T-SHIRT", "CLOTHING/T-SHIRTS", 
 				new String[] {
 						"Crewneck",
 						"Printed front panel",
 						"Buy your usual size",
 						"Made in Italy",
-						"Composition: 100% Cotton"}, "MEN"));
+						"Composition: 100% Cotton"}, "MEN", null));
 		productDao.addProduct(new Product(12, "TONIGHT PRINT COTTON T-SHIRT", "CLOTHING/T-SHIRTS", 
 				new String[] {
 						"Printed front panel",
 						"Model is wearing a size M",
 						"Model height: 1.88m",
 						"Buy your usual size",
-						"Composition: 100% Cotton"}, "MEN"));
+						"Composition: 100% Cotton"}, "MEN", null));
 		productDao.addProduct(new Product(13, "PRINT SNOPPY NIGHT COTTON JERSEY T-SHIRT", "CLOTHING/T-SHIRTS", 
 				new String[] {
 						"Printed front panel",
 						"Buy your usual size",
-						"Composition: 100% Cotton"}, "MEN"));
+						"Composition: 100% Cotton"}, "MEN", null));
 		productDao.addProduct(new Product(14, "STRIPED VISCOSE JERSEY T-SHIRT", "CLOTHING/T-SHIRTS", 
 				new String[] {
 						"All over print placement may vary",
@@ -144,7 +144,7 @@ public class MainRunner {
 						"Model height: 1.78m",
 						"Buy one size above your usual size",
 						"Made in Italy",
-						"Composition: 100% Viscose"}, "WOMEN"));
+						"Composition: 100% Viscose"}, "WOMEN", null));
 		productDao.addProduct(new Product(15, "LOGO PRINT COTTON BLEND DENIM JACKET", "CLOTHING/JACKETS", 
 				new String[] {
 						"Front button closure",
@@ -156,14 +156,14 @@ public class MainRunner {
 						"Model height: 1.78m",
 						"Buy your usual size",
 						"Made in Italy",
-						"Composition: 100% Cotton"}, "WOMEN"));
+						"Composition: 100% Cotton"}, "WOMEN", null));
 		productDao.addProduct(new Product(16, "COTTON JERSEY T-SHIRT W/RUFFLED SLEEVES", "CLOTHING/T-SHIRTS", 
 						new String[] {"new StrUnlined",
 						"Model is wearing a size 40",
 						"Model height: 1.78m",
 						"Buy your usual size",
 						"Made in Italy",
-						"Composition: 100% Cotton"}, "WOMEN"));
+						"Composition: 100% Cotton"}, "WOMEN", null));
 		productDao.addProduct(new Product(17, "TIOMAN CASHMERE KNIT WIDE PANTS", "CLOTHING/PANTS", 
 				new String[] {
 					"Elastic waistband",
@@ -172,7 +172,7 @@ public class MainRunner {
 					"Model is wearing a size S",
 					"Model height: 1.78m",
 					"Buy your usual size",
-					"Composition: 100% Cashmere"}, "WOMEN"));
+					"Composition: 100% Cashmere"}, "WOMEN", null));
 		
 		StyleDao styleDao = new StyleDao();
 		styleDao.addStyle(new Style(1, productDao.getProductById(1), "NAVY", 

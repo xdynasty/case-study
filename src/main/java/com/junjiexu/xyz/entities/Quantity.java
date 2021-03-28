@@ -64,7 +64,6 @@ public class Quantity {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + quantity;
 		result = prime * result + ((style == null) ? 0 : style.hashCode());
 		return result;
 	}
@@ -83,8 +82,6 @@ public class Quantity {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (quantity != other.quantity)
-			return false;
 		if (style == null) {
 			if (other.style != null)
 				return false;
@@ -92,6 +89,8 @@ public class Quantity {
 			return false;
 		return true;
 	}
+
+	
 
 	
 

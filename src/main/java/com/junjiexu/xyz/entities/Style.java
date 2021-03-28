@@ -99,13 +99,6 @@ public class Style {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + id;
-		result = prime * result + Arrays.hashCode(images);
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + Arrays.hashCode(previewImages);
-		long temp;
-		temp = Double.doubleToLongBits(price);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + ((product == null) ? 0 : product.hashCode());
 		return result;
 	}
 
@@ -120,24 +113,11 @@ public class Style {
 		Style other = (Style) obj;
 		if (id != other.id)
 			return false;
-		if (!Arrays.equals(images, other.images))
-			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		if (!Arrays.equals(previewImages, other.previewImages))
-			return false;
-		if (Double.doubleToLongBits(price) != Double.doubleToLongBits(other.price))
-			return false;
-		if (product == null) {
-			if (other.product != null)
-				return false;
-		} else if (!product.equals(other.product))
-			return false;
 		return true;
 	}
+
+	
+	
 
 	
 }

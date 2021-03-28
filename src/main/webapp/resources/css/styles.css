@@ -37,21 +37,21 @@ a {
 }
 
 #men {
-  background: url('../assets/images/kris.jpg') center;
+  background: url('../images/kris.jpg') center;
   background-size: contain;
 }
 
 #women {
-  background: url('../assets/images/women.jpg') center;
+  background: url('../images/women.jpg') center;
   background-size: cover;
 }
 
 #kids {
-  background: url('../assets/images/kids.webp') center;
+  background: url('../images/kids.webp') center;
   background-size: cover;
 }
 
 #home {
-  background: url('../assets/images/home.webp') center;
+  background: url('../images/home.webp') center;
   background-size: cover;
 }

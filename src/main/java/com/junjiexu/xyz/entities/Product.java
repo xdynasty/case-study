@@ -1,10 +1,12 @@
 package com.junjiexu.xyz.entities;
 
 import java.util.Arrays;
+import java.util.List;
 
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -20,21 +22,23 @@ public class Product {
 	private String[] details;
 	@Basic
 	private String type;
+	
+	@OneToMany(mappedBy="product")
+	List<Style> styles;
 
 	public Product() {
 		super();
 	}
 
-	public Product(int id, String name, String category, String[] details, String type) {
+	public Product(int id, String name, String category, String[] details, String type, List<Style> styles) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.category = category;
 		this.details = details;
 		this.type = type;
+		this.styles = styles;
 	}
-
-	
 
 	public int getId() {
 		return id;
@@ -76,18 +80,21 @@ public class Product {
 		this.type = type;
 	}
 
+	public List<Style> getStyles() {
+		return styles;
+	}
+
+	public void setStyles(List<Style> styles) {
+		this.styles = styles;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((category == null) ? 0 : category.hashCode());
-		result = prime * result + Arrays.hashCode(details);
 		result = prime * result + id;
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		return result;
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -98,27 +105,11 @@ public class Product {
 		if (getClass() != obj.getClass())
 			return false;
 		Product other = (Product) obj;
-		if (category == null) {
-			if (other.category != null)
-				return false;
-		} else if (!category.equals(other.category))
-			return false;
-		if (!Arrays.equals(details, other.details))
-			return false;
 		if (id != other.id)
-			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		if (type == null) {
-			if (other.type != null)
-				return false;
-		} else if (!type.equals(other.type))
 			return false;
 		return true;
 	}
+
 	
 	
 	
