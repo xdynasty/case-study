@@ -84,4 +84,22 @@ public class HomeController {
 		mav.addObject("style", style);
 		return mav;
 	}
+	
+	@GetMapping("/bag")
+	public ModelAndView bagHandler() {
+		ModelAndView mav = new ModelAndView("bag");
+		return mav;
+	}
+	
+	@GetMapping("/checkout")
+	public ModelAndView checkoutHandler() {
+		ModelAndView mav = new ModelAndView("checkout");
+		return mav;
+	}
+	
+	@GetMapping("/account")
+	public ModelAndView accountHandler() {
+		ModelAndView mav = new ModelAndView("account");
+		return mav;
+	}
 }

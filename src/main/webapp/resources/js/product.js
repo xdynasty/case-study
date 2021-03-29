@@ -59,7 +59,5 @@ styleId = styleId[styleId.length - 1];
     }
   });
 
-  $('#checkoutBtn').click(() => {
-    location.href = '../html/checkout.html';
-  });
+ 
 });

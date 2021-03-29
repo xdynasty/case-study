@@ -173,9 +173,9 @@
                 </div>
                 <div class="col">
                   <div class="d-grid">
-                    <button type="button" class="btn btn-dark" id="checkoutBtn">
+                    <a href="${pageContext.request.contextPath}/checkout"><button type="button" class="btn btn-dark" id="checkoutBtn">
                       CHECKOUT
-                    </button>
+                    </button></a>
                   </div>
                 </div>
               </div>
