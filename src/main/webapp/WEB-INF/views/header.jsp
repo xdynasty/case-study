@@ -10,7 +10,7 @@
         </div>
       </div>
       <nav class="nav justify-content-center">
-        <a class="nav-link active" href="${pageContext.request.contextPath}/men">MEN</a>
+        <a class="nav-link" href="${pageContext.request.contextPath}/men">MEN</a>
         <a class="nav-link" href="${pageContext.request.contextPath}/women">WOMEN</a>
         <a class="nav-link" href="${pageContext.request.contextPath}/kids">KIDS</a>
         <a class="nav-link" href="${pageContext.request.contextPath}/home">HOME</a>

@@ -35,24 +35,37 @@
     <div class="container-fluid" id="main">
       <div class="row">
         <div class="col-md-2 col-sm-12">
-          <div id="carousel"></div>
+          <div id="carousel"><c:forEach items="${style.images}" var="image">
+          <img src="${image}">
+          </c:forEach></div>
         </div>
         <div class="col-md col-sm-12 d-flex justify-content-center">
-          <img id="mainImg" />
+          <img id="mainImg" src="${style.images[0]}"/>
         </div>
         <div class="col-md col-sm-12">
           <div class="row">
-            <div class="col"><p id="productName"></p></div>
+            <div class="col"><p id="productName">${style.product.name}</p></div>
           </div>
           <div class="row">
-            <div class="col"><p id="price"></p></div>
+            <div class="col"><p id="price">$${style.price }</p></div>
           </div>
 
           <div class="row">
             <div class="col">
               <label for="style">STYLE</label>
               <div id="style">
-                <div id="styleSelection"></div>
+                <div id="styleSelection">
+                ${style.name }
+                </div>
+                	<c:if test="${style.product.styles.size() > 1 }">
+                	<div class="style-options options">
+                	<c:forEach items="${style.product.styles}" var="productStyle">
+                		<c:if test="${productStyle.id != style.id }">
+                		<a href="${pageContext.request.contextPath}/product/${productStyle.id}"><div class="style-option">${productStyle.name}</div></a>
+                		</c:if>
+                	</c:forEach>
+                	</div>
+                	</c:if>
               </div>
             </div>
             <div class="col">
@@ -60,13 +73,16 @@
               <div id="size">
                 <div id="sizeSelection"></div>
                 <div class="size-options options">
-                  <div class="size-option" data-value="OPTION 1">OPTION 1</div>
-                  <div class="size-option" data-value="OPTION 2">OPTION 2</div>
-                  <div class="size-option" data-value="OPTION 3">OPTION 3</div>
+                <c:forEach items="${style.quantities}" var="quantity">
+                	<div class="size-option" data-value="${quantity.id.size}">${quantity.id.size}</div>
+                </c:forEach>
                 </div>
               </div>
+              
             </div>
+            
           </div>
+          
           <div class="row">
             <div class="col">
               <p>IN STOCK</p>
@@ -99,7 +115,8 @@
                     aria-labelledby="flush-headingOne"
                     data-bs-parent="#accordion"
                   >
-                    <div class="accordion-body"></div>
+                    <div class="accordion-body"><ul id="details"><c:forEach items="${style.product.details}" var="detail"><li>${detail}</li>
+                    </c:forEach></ul></div>
                   </div>
                 </div>
               </div>
@@ -108,15 +125,7 @@
         </div>
       </div>
     </div>
-
-    <footer class="container-fluid">
-      <div class="row"><div class="col"></div></div>
-      <div class="row">
-        <div class="col text-center">
-          <small>Copyright © 2021 Junjie Xu. All Rights Reserved</small>
-        </div>
-      </div>
-    </footer>
+<jsp:include page="./footer.jsp"/>
 
     <div class="modal" id="bagModal">
       <div class="modal-dialog modal-dialog-centered">

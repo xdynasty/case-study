@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.junjiexu.xyz.daos.ProductDao;
+import com.junjiexu.xyz.daos.StyleDao;
 import com.junjiexu.xyz.entities.Product;
+import com.junjiexu.xyz.entities.Quantity;
 import com.junjiexu.xyz.entities.Style;
 
 @Controller
@@ -66,8 +68,20 @@ public class HomeController {
 	
 	@GetMapping("/product/{styleId}")
 	public ModelAndView productHandler(@PathVariable(value="styleId") int styleId) {
-		System.out.println("styleId: " + styleId);
+		StyleDao styleDao = new StyleDao();
+		Style style = styleDao.getStyleById(styleId);
+		Product product = style.getProduct();
+		System.out.println(product.getName());
 		ModelAndView mav = new ModelAndView("product");
+		System.out.println("PRINTING SIZES");
+		List<Quantity> quantities = style.getQuantities();
+		System.out.println("PRINTING QUANTITY SIZE");
+		System.out.println(quantities.size());
+		for (Quantity quantity : quantities) {
+			System.out.println(quantity.getId().getSize());
+		}
+		System.out.println("DONE");
+		mav.addObject("style", style);
 		return mav;
 	}
 }

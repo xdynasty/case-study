@@ -36,7 +36,9 @@ public class Style {
 		super();
 	}
 
-	public Style(int id, Product product, String name, String[] previewImages, String[] images, double price) {
+	
+	public Style(int id, Product product, String name, String[] previewImages, String[] images, double price,
+			List<Quantity> quantities) {
 		super();
 		this.id = id;
 		this.product = product;
@@ -44,55 +46,80 @@ public class Style {
 		this.previewImages = previewImages;
 		this.images = images;
 		this.price = price;
+		this.quantities = quantities;
 	}
 
+
+	
 	public int getId() {
 		return id;
 	}
+
 
 	public void setId(int id) {
 		this.id = id;
 	}
 
+
 	public Product getProduct() {
 		return product;
 	}
+
 
 	public void setProduct(Product product) {
 		this.product = product;
 	}
 
+
 	public String getName() {
 		return name;
 	}
+
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
+
 	public String[] getPreviewImages() {
 		return previewImages;
 	}
+
 
 	public void setPreviewImages(String[] previewImages) {
 		this.previewImages = previewImages;
 	}
 
+
 	public String[] getImages() {
 		return images;
 	}
+
 
 	public void setImages(String[] images) {
 		this.images = images;
 	}
 
+
 	public double getPrice() {
 		return price;
 	}
 
+
 	public void setPrice(double price) {
 		this.price = price;
 	}
+
+
+	public List<Quantity> getQuantities() {
+		return quantities;
+	}
+
+
+	public void setQuantities(List<Quantity> quantities) {
+		this.quantities = quantities;
+	}
+
 
 	@Override
 	public int hashCode() {
