@@ -24,12 +24,11 @@ public class UserDao extends AbstractDao implements UserI {
 	}
 
 	@Override
-	public User getUser(int userId) {
+	public User getUser(String email) {
 		try {
 			System.out.println("getUser");
-			System.out.println("userId: " + userId);
 			connect();
-			return em.find(User.class, userId);
+			return em.find(User.class, email);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;

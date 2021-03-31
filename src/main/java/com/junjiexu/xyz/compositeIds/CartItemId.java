@@ -25,11 +25,12 @@ public class CartItemId implements Serializable{
 		this.styleId = styleId;
 	}
 
-	public String getuserEmail() {
+
+	public String getUserEmail() {
 		return userEmail;
 	}
 
-	public void setuserEmail(String userEmail) {
+	public void setUserEmail(String userEmail) {
 		this.userEmail = userEmail;
 	}
 

@@ -4,9 +4,11 @@ import com.junjiexu.xyz.compositeIds.QuantityId;
 import com.junjiexu.xyz.daos.ProductDao;
 import com.junjiexu.xyz.daos.QuantityDao;
 import com.junjiexu.xyz.daos.StyleDao;
+import com.junjiexu.xyz.daos.UserDao;
 import com.junjiexu.xyz.entities.Product;
 import com.junjiexu.xyz.entities.Quantity;
 import com.junjiexu.xyz.entities.Style;
+import com.junjiexu.xyz.entities.User;
 
 public class MainRunner {
 
@@ -17,13 +19,17 @@ public class MainRunner {
 //		productDao.getProductsByType("MEN");
 //		QuantityDao quantityDao = new QuantityDao();
 //		quantityDao.updateQuantityByStyleIdAndSize(2, "30", 4);
-		populateTable();
+//		populateTable();
 //		StyleDao styleDao = new StyleDao();
 //		styleDao.getStylesByProductId(3).forEach(style -> System.out.println(style.getName()));
 		
 	}
 	
+	
 	public static void populateTable() {
+		UserDao userDao = new UserDao();
+		userDao.addUser(new User("junjie325@gmail.com", "pass123"));
+		
 		ProductDao productDao = new ProductDao();
 		productDao.addProduct(new Product(1, "LOGO OVER COTTON & WOOL KNIT SWEATER", "CLOTHING/KNITWEAR", new String[] {"Embroidered front logo", "Model is wearing a size M", "Model height: 1.88m", 
 				"Cut for an oversize fit",

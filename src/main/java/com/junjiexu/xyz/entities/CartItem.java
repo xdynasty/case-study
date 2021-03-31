@@ -30,36 +30,78 @@ public class CartItem {
 		super();
 	}
 
-	public CartItem(CartItemId id, String size, int quantity) {
+
+
+	public CartItem(CartItemId id, String size, int quantity, Style style, User user) {
 		super();
 		this.id = id;
 		this.size = size;
 		this.quantity = quantity;
+		this.style = style;
+		this.user = user;
 	}
+
+	
 
 	public CartItemId getId() {
 		return id;
 	}
 
+
+
 	public void setId(CartItemId id) {
 		this.id = id;
 	}
+
+
 
 	public String getSize() {
 		return size;
 	}
 
+
+
 	public void setSize(String size) {
 		this.size = size;
 	}
+
+
 
 	public int getQuantity() {
 		return quantity;
 	}
 
+
+
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
+
+
+
+	public Style getStyle() {
+		return style;
+	}
+
+
+
+	public void setStyle(Style style) {
+		this.style = style;
+	}
+
+
+
+	public User getUser() {
+		return user;
+	}
+
+
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+
 
 	@Override
 	public int hashCode() {

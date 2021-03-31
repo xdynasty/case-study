@@ -5,50 +5,33 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.junjiexu.xyz.daos.CartItemDao;
 import com.junjiexu.xyz.daos.ProductDao;
 import com.junjiexu.xyz.daos.StyleDao;
 import com.junjiexu.xyz.entities.Product;
 import com.junjiexu.xyz.entities.Quantity;
 import com.junjiexu.xyz.entities.Style;
+import com.junjiexu.xyz.entities.User;
 
 @Controller
 public class HomeController {
-	@RequestMapping("/")
+	@GetMapping("/")
 	public String indexHandler() {
 		return "index";
 	}
 	
-	@GetMapping("/men")
-	public ModelAndView menHandler() {
-		ModelAndView mav = new ModelAndView("products");
-		ProductDao productDao = new ProductDao();
-		List<Product> products = productDao.getProductsByType("MEN");
-		List<Style> styles = new ArrayList<>();
-		for (Product product : products) {
-			for (Style style : product.getStyles()) {
-				styles.add(style);
-			}
-		}
-		for (Product product : products) {
-			System.out.println(product.getId());
-		}
-		System.out.println("PRODUCTS SIZE");
-		System.out.println(products.size());
-		System.out.println("STYLES SIZE");
-		System.out.println(styles.size());
-		mav.addObject("styles", styles);
-		return mav;
-	}
 	
-	@GetMapping("/women")
-	public ModelAndView womenHandler() {
+	@GetMapping("/{type}")
+	public ModelAndView typeHandler(@PathVariable(value="type") String type) {
 		ModelAndView mav = new ModelAndView("products");
 		ProductDao productDao = new ProductDao();
-		List<Product> products = productDao.getProductsByType("WOMEN");
+		List<Product> products = productDao.getProductsByType(type);
 		List<Style> styles = new ArrayList<>();
 		for (Product product : products) {
 			for (Style style : product.getStyles()) {
@@ -87,6 +70,8 @@ public class HomeController {
 	
 	@GetMapping("/bag")
 	public ModelAndView bagHandler() {
+		CartItemDao cartItemDao = new CartItemDao();
+		cartItemDao.getAllCartItemsByUserEmail(null);
 		ModelAndView mav = new ModelAndView("bag");
 		return mav;
 	}
@@ -100,6 +85,14 @@ public class HomeController {
 	@GetMapping("/account")
 	public ModelAndView accountHandler() {
 		ModelAndView mav = new ModelAndView("account");
+		return mav;
+	}
+	
+	@PostMapping("/register")
+	public ModelAndView registerHandler(@ModelAttribute(value="user") User user) {
+		ModelAndView mav = new ModelAndView("index");
+		System.out.println("EMAIL: ");
+		System.out.println(user.getEmail());
 		return mav;
 	}
 }

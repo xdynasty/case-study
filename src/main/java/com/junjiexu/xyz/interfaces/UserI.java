@@ -4,5 +4,5 @@ import com.junjiexu.xyz.entities.User;
 
 public interface UserI {
 	int addUser(User user);
-	User getUser(int userId);
+	User getUser(String email);
 }

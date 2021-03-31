@@ -11,12 +11,13 @@ import com.junjiexu.xyz.interfaces.CartItemI;
 public class CartItemDao extends AbstractDao implements CartItemI{
 
 	@Override
-	public List<CartItem> getAllCartItemsByUserId(String userId) {
+	public List<CartItem> getAllCartItemsByUserEmail(String userEmail) {
 		try {
-			System.out.println("getAllCartItemsByUserId");
-			System.out.println("userId: " + userId);
+			System.out.println("getAllCartItemsByUserEmail");
+			System.out.println("userEmail: " + userEmail);
 			connect();
-			Query query = em.createQuery("SELECT ci from CartItem ci");
+			Query query = em.createQuery("SELECT ci from CartItem ci WHERE ci.userEmail = :userEmail");
+			query.setParameter("userEmail", userEmail);
 			List<CartItem> cartItems = query.getResultList();
 			return cartItems;
 		} catch (Exception e) {
