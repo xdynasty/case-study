@@ -1,10 +1,13 @@
 package main;
 
+import com.junjiexu.xyz.compositeIds.CartItemId;
 import com.junjiexu.xyz.compositeIds.QuantityId;
+import com.junjiexu.xyz.daos.CartItemDao;
 import com.junjiexu.xyz.daos.ProductDao;
 import com.junjiexu.xyz.daos.QuantityDao;
 import com.junjiexu.xyz.daos.StyleDao;
 import com.junjiexu.xyz.daos.UserDao;
+import com.junjiexu.xyz.entities.CartItem;
 import com.junjiexu.xyz.entities.Product;
 import com.junjiexu.xyz.entities.Quantity;
 import com.junjiexu.xyz.entities.Style;
@@ -19,7 +22,7 @@ public class MainRunner {
 //		productDao.getProductsByType("MEN");
 //		QuantityDao quantityDao = new QuantityDao();
 //		quantityDao.updateQuantityByStyleIdAndSize(2, "30", 4);
-//		populateTable();
+		populateTable();
 //		StyleDao styleDao = new StyleDao();
 //		styleDao.getStylesByProductId(3).forEach(style -> System.out.println(style.getName()));
 		
@@ -27,8 +30,7 @@ public class MainRunner {
 	
 	
 	public static void populateTable() {
-		UserDao userDao = new UserDao();
-		userDao.addUser(new User("junjie325@gmail.com", "pass123"));
+		
 		
 		ProductDao productDao = new ProductDao();
 		productDao.addProduct(new Product(1, "LOGO OVER COTTON & WOOL KNIT SWEATER", "CLOTHING/KNITWEAR", new String[] {"Embroidered front logo", "Model is wearing a size M", "Model height: 1.88m", 
@@ -322,5 +324,13 @@ public class MainRunner {
 		quantityDao.addQuantity(new Quantity(new QuantityId(20, "S"), 1, styleDao.getStyleById(20)));
 		quantityDao.addQuantity(new Quantity(new QuantityId(21, "L"), 3, styleDao.getStyleById(20)));
 		
+		
+		UserDao userDao = new UserDao();
+		userDao.addUser(new User("junjie325@gmail.com", "pass123"));
+		CartItemDao cartItemDao = new CartItemDao();
+//		 cartItemDao.addCartItem(new CartItem(new CartItemId("junjie325@gmail.com", 3), "8.5", 1, styleDao.getStyleById(3), userDao.getUser("junjie325@gmail.com"), quantityDao.getQuantityByStyleIdAndSize(3, "8.5")));
+//		 cartItemDao.addCartItem(new CartItem(new CartItemId("junjie325@gmail.com", 5), "OS", 1, styleDao.getStyleById(5), userDao.getUser("junjie325@gmail.com"), quantityDao.getQuantityByStyleIdAndSize(5, "OS")));
+		cartItemDao.addCartItem(new CartItem(new CartItemId("junjie325@gmail.com", 3), "8.5", 1, styleDao.getStyleById(3), userDao.getUser("junjie325@gmail.com")));
+		cartItemDao.addCartItem(new CartItem(new CartItemId("junjie325@gmail.com", 5), "OS", 1, styleDao.getStyleById(5), userDao.getUser("junjie325@gmail.com")));
 	}
 }

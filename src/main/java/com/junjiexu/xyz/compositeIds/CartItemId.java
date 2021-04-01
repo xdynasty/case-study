@@ -5,9 +5,6 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
-import com.junjiexu.xyz.entities.Style;
-import com.junjiexu.xyz.entities.User;
-
 
 @Embeddable
 public class CartItemId implements Serializable{

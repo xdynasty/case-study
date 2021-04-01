@@ -29,6 +29,7 @@
       src="https://kit.fontawesome.com/b15d1bc6ae.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
    <jsp:include page="./header.jsp"/>

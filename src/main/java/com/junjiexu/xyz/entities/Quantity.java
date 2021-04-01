@@ -3,8 +3,6 @@ package com.junjiexu.xyz.entities;
 import javax.persistence.Basic;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
@@ -18,7 +16,8 @@ public class Quantity {
 	@EmbeddedId
 	private QuantityId id;
 	@Basic
-	private int quantity;
+	@JoinColumn(name="STOCK_QUANTITY")
+	private int stockQuantity;
 	
 	@MapsId("styleId")
 	@ManyToOne
@@ -28,10 +27,10 @@ public class Quantity {
 		super();
 	}
 
-	public Quantity(QuantityId id, int quantity, Style style) {
+	public Quantity(QuantityId id, int stockQuantity, Style style) {
 		super();
 		this.id = id;
-		this.quantity = quantity;
+		this.stockQuantity = stockQuantity;
 		this.style = style;
 	}
 
@@ -43,12 +42,12 @@ public class Quantity {
 		this.id = id;
 	}
 
-	public int getQuantity() {
-		return quantity;
+	public int getStockQuantity() {
+		return stockQuantity;
 	}
 
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
+	public void setStockQuantity(int stockQuantity) {
+		this.stockQuantity = stockQuantity;
 	}
 
 	public Style getStyle() {
@@ -64,7 +63,6 @@ public class Quantity {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((style == null) ? 0 : style.hashCode());
 		return result;
 	}
 
@@ -81,11 +79,6 @@ public class Quantity {
 			if (other.id != null)
 				return false;
 		} else if (!id.equals(other.id))
-			return false;
-		if (style == null) {
-			if (other.style != null)
-				return false;
-		} else if (!style.equals(other.style))
 			return false;
 		return true;
 	}

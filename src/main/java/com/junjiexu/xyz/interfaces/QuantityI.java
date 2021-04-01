@@ -3,8 +3,8 @@ package com.junjiexu.xyz.interfaces;
 import com.junjiexu.xyz.entities.Quantity;
 
 public interface QuantityI {
-	int getQuantityByStyleIdAndSize(int styleId, String size);
-	int updateQuantityByStyleIdAndSize(int styleId, String size, int quantity);
+	Quantity getQuantityByStyleIdAndSize(int styleId, String size);
+	int updateQuantityByStyleIdAndSize(int styleId, String size, int stockQuantity);
 	int removeQuantityByStyleIdAndSize(int styleId, String size);
 	int addQuantity(Quantity quantity);
 }

@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col">
           <h1 style="color: white">
-            <a href="/">XYZ</a>
+            <a href="${pageContext.request.contextPath}">XYZ</a>
           </h1>
         </div>
       </div>

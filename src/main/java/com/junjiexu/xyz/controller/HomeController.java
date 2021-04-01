@@ -3,6 +3,8 @@ package com.junjiexu.xyz.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -14,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.junjiexu.xyz.daos.CartItemDao;
 import com.junjiexu.xyz.daos.ProductDao;
 import com.junjiexu.xyz.daos.StyleDao;
+import com.junjiexu.xyz.entities.CartItem;
 import com.junjiexu.xyz.entities.Product;
 import com.junjiexu.xyz.entities.Quantity;
 import com.junjiexu.xyz.entities.Style;
@@ -71,8 +74,12 @@ public class HomeController {
 	@GetMapping("/bag")
 	public ModelAndView bagHandler() {
 		CartItemDao cartItemDao = new CartItemDao();
-		cartItemDao.getAllCartItemsByUserEmail(null);
+		List<CartItem> cartItems = cartItemDao.getAllCartItemsByUserEmail("junjie325@gmail.com");
+		for (CartItem ci: cartItems) {
+			System.out.println(ci.getStyle().getProduct().getName());
+		}
 		ModelAndView mav = new ModelAndView("bag");
+		mav.addObject("cartItems", cartItems);
 		return mav;
 	}
 	
@@ -94,5 +101,12 @@ public class HomeController {
 		System.out.println("EMAIL: ");
 		System.out.println(user.getEmail());
 		return mav;
+	}
+	
+	@PostMapping("/add_product")
+	public void addProductHandler(HttpServletRequest request) {
+		System.out.println("PRINTING REQUEST PARAMETERS");
+		System.out.println(request.getParameter("styleId"));
+		System.out.println(request.getParameter("size"));
 	}
 }

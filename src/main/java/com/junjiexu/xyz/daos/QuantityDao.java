@@ -7,7 +7,7 @@ import com.junjiexu.xyz.interfaces.QuantityI;
 public class QuantityDao extends AbstractDao implements QuantityI {
 
 	@Override
-	public int getQuantityByStyleIdAndSize(int styleId, String size) {
+	public Quantity getQuantityByStyleIdAndSize(int styleId, String size) {
 		try {
 			System.out.println("getQuantityByStyleIdAndSize");
 			System.out.println("styleId: " + styleId);
@@ -15,26 +15,26 @@ public class QuantityDao extends AbstractDao implements QuantityI {
 			connect();
 			em.getTransaction().begin();
 			Quantity q = em.find(Quantity.class, new QuantityId(styleId, size));
-			return q.getQuantity();
+			return q;
 		} catch (Exception e) {
 			e.printStackTrace();
-			return 0;
+			return null;
 		} finally {
 			disconnect();
 		}
 	}
 
 	@Override
-	public int updateQuantityByStyleIdAndSize(int styleId, String size, int quantity) {
+	public int updateQuantityByStyleIdAndSize(int styleId, String size, int stockQuantity) {
 		try {
 			System.out.println("updateQuantityByStyleIdAndSize");
 			System.out.println("styleId: " + styleId);
 			System.out.println("size: " + size);
-			System.out.println("quantity: " + quantity);
+			System.out.println("quantity: " + stockQuantity);
 			connect();
 			em.getTransaction().begin();
 			Quantity q = em.find(Quantity.class, new QuantityId(styleId, size));
-			q.setQuantity(quantity);
+			q.setStockQuantity(stockQuantity);
 			em.getTransaction().commit();
 			return 1;
 		} catch (Exception e) {

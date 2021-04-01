@@ -8,5 +8,5 @@ public interface CartItemI {
 	List<CartItem> getAllCartItemsByUserEmail(String userEmail);
 	int addCartItem(CartItem ci);
 	int removeCartItem(String userEmail, int styleId);
-	int updateCartItemQuantity(String userEmail, int styleId, int quantity);
+	int updateCartItemCartQuantity(String userEmail, int styleId, int quantity);
 }

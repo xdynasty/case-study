@@ -56,8 +56,18 @@ styleId = styleId[styleId.length - 1];
       $('#modalStyle').text($("#styleSelection").text());
       $('#modalSize').text(selectedSize);
       $('#bagModal').modal('show');
+      axios.post("http://localhost:8080/case-study/add_product", null, {
+      	params: {
+      	styleId,
+      	size: selectedSize,	
+      	}
+      }).then(() => {
+      console.log("sent post");
+      }).catch(err => console.log);
     }
   });
+  
+  
 
  
 });

@@ -16,7 +16,7 @@ public class CartItemDao extends AbstractDao implements CartItemI{
 			System.out.println("getAllCartItemsByUserEmail");
 			System.out.println("userEmail: " + userEmail);
 			connect();
-			Query query = em.createQuery("SELECT ci from CartItem ci WHERE ci.userEmail = :userEmail");
+			Query query = em.createQuery("SELECT ci from CartItem ci WHERE ci.id.userEmail = :userEmail");
 			query.setParameter("userEmail", userEmail);
 			List<CartItem> cartItems = query.getResultList();
 			return cartItems;
@@ -56,7 +56,7 @@ public class CartItemDao extends AbstractDao implements CartItemI{
 			em.getTransaction().begin();
 			CartItem ci = em.find(CartItem.class, new CartItemId(userEmail, styleId));
 			System.out.println("REMOVING");
-			System.out.println(ci.getQuantity());
+			System.out.println(ci.getCartQuantity());
 			em.remove(ci);
 			em.getTransaction().commit();
 			return 1;
@@ -69,20 +69,18 @@ public class CartItemDao extends AbstractDao implements CartItemI{
 	}
 
 	@Override
-	public int updateCartItemQuantity(String userEmail, int styleId, int quantity) {
+	public int updateCartItemCartQuantity(String userEmail, int styleId, int cartQuantity) {
 		
 		try {
 			System.out.println("updateCartItemQuantity");
 			System.out.println("userEmail: " + userEmail);
 			System.out.println("styleId: " + styleId);
-			System.out.println("quantity: " + quantity);
+			System.out.println("quantity: " + cartQuantity);
 			connect();
 			em.getTransaction().begin();
 			CartItem ci = em.find(CartItem.class, new CartItemId(userEmail, styleId));
-			System.out.println("REMOVING");
-			
-			System.out.println(ci.getQuantity());
-			ci.setQuantity(quantity);
+			System.out.println(ci.getCartQuantity());
+			ci.setCartQuantity(cartQuantity);
 			em.getTransaction().commit();
 			return 1;
 		} catch (Exception e) {
