@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+   <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -16,10 +17,10 @@
       integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
       crossorigin="anonymous"
     />
-    <link href="<c:url value="/resources/css/styles.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/css/button.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/css/order.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/navbar.css" />" rel="stylesheet">
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -30,9 +31,10 @@
       src="https://kit.fontawesome.com/b15d1bc6ae.js"
       crossorigin="anonymous"
     ></script>
+
   </head>
   <body>
-   <jsp:include page="./header.jsp"/>
+   <jsp:include page="./navbar.jsp"/>
 
     <div class="container-fluid" id="main">
       <div class="row">
@@ -85,21 +87,27 @@
           </div>
          	</form>
         </div>
-        <div class="col-md-4 order">
+        <div class="col-md-1 order">
           <div class="row">
             <div class="col"><h3>ORDER</h3></div>
           </div>
           <div class="row">
             <div class="col">SUBTOTAL</div>
-            <div class="col order-value">323</div>
+            <div class="col order-value">
+				<c:set var="subtotal" value="${0}"/>
+				<c:forEach items="${cartItems}" var="cartItem">
+				<c:set var="subtotal" value="${subtotal + cartItem.style.price}"/>
+				</c:forEach>
+				$<fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${subtotal}"/>
+			</div>
           </div>
           <div class="row">
             <div class="col">SHIPPING</div>
-            <div class="col order-value">2231</div>
+            <div class="col order-value">$100</div>
           </div>
           <div class="row">
             <div class="col">TOTAL</div>
-            <div class="col order-value">2.223</div>
+            <div class="col order-value">$<fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${subtotal + 100}"/></div>
           </div>
           <div class="row">
             <div class="col">

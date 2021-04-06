@@ -16,7 +16,7 @@
       integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
       crossorigin="anonymous"
     />
-  	<link href="<c:url value="/resources/css/styles.css" />" rel="stylesheet">
+  	<link href="<c:url value="/resources/css/index.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/css/flash.css" />" rel="stylesheet">
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -84,6 +84,6 @@
       integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
       crossorigin="anonymous"
     ></script>
-   <script src="<c:url value="/resources/js/index.js" />"></script>
+   <script src="<c:url value="/resources/js/flash.js" />"></script>
   </body>
 </html>

@@ -17,12 +17,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.junjiexu.xyz.compositeIds.CartItemId;
 import com.junjiexu.xyz.daos.CartItemDao;
-import com.junjiexu.xyz.daos.ProductDao;
+import com.junjiexu.xyz.daos.QuantityDao;
 import com.junjiexu.xyz.daos.StyleDao;
 import com.junjiexu.xyz.daos.UserDao;
 import com.junjiexu.xyz.entities.CartItem;
-import com.junjiexu.xyz.entities.Product;
-import com.junjiexu.xyz.entities.Quantity;
 import com.junjiexu.xyz.entities.Style;
 import com.junjiexu.xyz.entities.User;
 import com.junjiexu.xyz.services.StyleService;
@@ -68,9 +66,17 @@ public class HomeController {
 	}
 	
 	@GetMapping("/checkout")
-	public ModelAndView checkoutHandler() {
-		ModelAndView mav = new ModelAndView("checkout");
-		return mav;
+	public ModelAndView checkoutHandler(HttpSession session) {
+		User user = (User) session.getAttribute("user");
+		if (user == null) {
+			return new ModelAndView("account");
+		} else {
+			CartItemDao cartItemDao = new CartItemDao();
+			List<CartItem> cartItems = cartItemDao.getAllCartItemsByUsername(user.getUsername());
+			ModelAndView mav = new ModelAndView("checkout");
+			mav.addObject("cartItems", cartItems);
+			return mav;
+		}
 	}
 	
 	@GetMapping("/account")
@@ -97,17 +103,18 @@ public class HomeController {
 	@PostMapping("/signin")
 	public ModelAndView signinHandler(@ModelAttribute(value="user") User user, HttpSession session, HttpServletResponse response) {	
 		UserDao userDao = new UserDao();
+		// if the username (user) does not exist or the password does not match the db record
 		if (userDao.getUserByUsername(user.getUsername()) == null || !userDao.getUserByUsername(user.getUsername()).getPassword().equals(user.getPassword())) {
 			ModelAndView mav = new ModelAndView("account");
 			mav.addObject("message", "INVALID CREDENTIALS");
 			return mav;
-		} else {
+		} else { //if the user credentials match
 			Cookie cookie = new Cookie("sid", user.getUsername());
 			cookie.setMaxAge(7 * 24 * 60 * 60);
 			cookie.setPath("/");
-			response.addCookie(cookie);
+			response.addCookie(cookie); // tell client to set a cookie containing the sessionId
 			ModelAndView mav = new ModelAndView("index");
-			session.setAttribute("user", user);
+			session.setAttribute("user", user); // store the user reference in the session
 			return mav;
 		}
 	}
@@ -119,12 +126,37 @@ public class HomeController {
 		String size = request.getParameter("size");
 		CartItemDao cartItemDao = new CartItemDao();
 		StyleDao styleDao = new StyleDao();
-		cartItemDao.addCartItem(new CartItem(new CartItemId(user.getUsername(), styleId), size, 1, styleDao.getStyleById(styleId), user));
-		response.setStatus(HttpServletResponse.SC_CREATED);	
+		QuantityDao quantityDao = new QuantityDao();
+		CartItemId cartItemId = new CartItemId(user.getUsername(), styleId);
+		CartItem ci = cartItemDao.getCartItemByCartItemId(cartItemId);
+		if (user != null) {
+			if (ci != null && quantityDao.getQuantityByStyleIdAndSize(styleId, size).getStockQuantity() >= ci.getCartQuantity() + 1) {
+				cartItemDao.updateCartItemCartQuantity(user.getUsername(), styleId, ci.getCartQuantity() + 1);
+			} else {
+				cartItemDao.addCartItem(new CartItem(new CartItemId(user.getUsername(), styleId), size, 1, styleDao.getStyleById(styleId), user));
+			}
+			response.setStatus(HttpServletResponse.SC_CREATED);	
+		} else {
+			response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+		}
+		
 	}
 	
 	@PostMapping("/update_quantity")
-	public void updateQuantityHandler(HttpServletRequest request, HttpServletResponse response) {
+	public void updateQuantityHandler(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
+		User user = (User) session.getAttribute("user");
+		String username = user.getUsername();
+		int styleId = Integer.parseInt(request.getParameter("styleId"));
+		int newQuantity = Integer.parseInt(request.getParameter("newQuantity"));
+		System.out.println("username: " + username);
+		System.out.println("styleId: " + styleId);
+		System.out.println("newQuantity: " + newQuantity);
+		CartItemDao cartItemDao = new CartItemDao();
+		if (newQuantity > 0) {
+			cartItemDao.updateCartItemCartQuantity(username, styleId, newQuantity);
+		} else {
+			cartItemDao.removeCartItem(username, styleId);
+		}	 
 		response.setStatus(HttpServletResponse.SC_OK);
 	}
 }

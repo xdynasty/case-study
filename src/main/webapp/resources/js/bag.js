@@ -8,7 +8,8 @@ $(() => {
       	styleId: $(this).data("style-id")	
       	}
       }).then(() => {
-      console.log("sent post");
+      window.location.reload(true);
       }).catch(err => console.log);
+      
   });
 });

@@ -17,8 +17,6 @@
       integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
       crossorigin="anonymous"
     />
-    <link href="<c:url value="/resources/css/styles.css" />" rel="stylesheet">
-    <link href="<c:url value="/resources/css/flash.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/css/product.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/css/navbar.css" />" rel="stylesheet">
     <script
@@ -32,9 +30,10 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
   </head>
   <body>
-   <jsp:include page="./header.jsp"/>
+   <jsp:include page="./navbar.jsp"/>
     <div class="container-fluid" id="main">
       <div class="row">
         <div class="col-md-2 col-sm-12">
@@ -194,5 +193,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="<c:url value="/resources/js/product.js" />"></script>
+    <script src="<c:url value="/resources/js/flash.js" />"></script>
   </body>
 </html>

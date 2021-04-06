@@ -17,8 +17,7 @@
       integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
       crossorigin="anonymous"
     />
-		<link href="
-			<c:url value="/resources/css/styles.css" />" rel="stylesheet">
+		<link href="<c:url value="/resources/css/navbar.css" />" rel="stylesheet">
 			<link href="
 				<c:url value="/resources/css/main.css" />" rel="stylesheet">
 				<link href="
@@ -27,6 +26,7 @@
 						<c:url value="/resources/css/order.css" />" rel="stylesheet">
 						<link href="
 							<c:url value="/resources/css/bag.css" />" rel="stylesheet">
+							<link href="<c:url value="/resources/css/flash.css" />" rel="stylesheet">
 							<script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
@@ -38,9 +38,10 @@
     ></script>
     
  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+ 
 						</head>
 						<body>
-							<jsp:include page="./header.jsp"/>
+							<jsp:include page="./navbar.jsp"/>
 							<div class="container-fluid" id="main">
 								<div class="row">
 									<div class="col">
@@ -107,7 +108,7 @@
 														<c:forEach items="${cartItems}" var="cartItem">
 															<c:set var="subtotal" value="${subtotal + cartItem.style.price}"/>
 														</c:forEach>
-														$<c:out value="${subtotal}"/>
+														$<fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${subtotal}"/>
 													</div>
 												</div>
 												<div class="row">
@@ -116,7 +117,7 @@
 												</div>
 												<div class="row">
 													<div class="col">TOTAL</div>
-													<div class="col order-value">$<c:out value="${subtotal + 100}"/></div>
+													<div class="col order-value">$<fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${subtotal + 100}"/></div>
 												</div>
 												<div class="row">
 													<div class="col">

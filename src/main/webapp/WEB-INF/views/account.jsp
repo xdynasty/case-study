@@ -16,9 +16,9 @@
       integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
       crossorigin="anonymous"
     />
-    <link href="<c:url value="/resources/css/styles.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/css/button.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/navbar.css" />" rel="stylesheet">
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
@@ -28,9 +28,10 @@
       src="https://kit.fontawesome.com/b15d1bc6ae.js"
       crossorigin="anonymous"
     ></script>
+   
   </head>
   <body>
-     <jsp:include page="./header.jsp"/>
+     <jsp:include page="./navbar.jsp"/>
     <div class="container-fluid" id="main">
     <div class="row"><div class="col" style="text-align: center">${message}</div></div>
       <div class="row">

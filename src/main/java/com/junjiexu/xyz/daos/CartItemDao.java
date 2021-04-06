@@ -90,5 +90,20 @@ public class CartItemDao extends AbstractDao implements CartItemI{
 			disconnect();
 		}
 	}
+
+	@Override
+	public CartItem getCartItemByCartItemId(CartItemId cartItemId) {
+		try {
+			connect();
+			return em.find(CartItem.class, cartItemId);
+		} catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			disconnect();
+		}
+	}
+	
+	
 	
 }

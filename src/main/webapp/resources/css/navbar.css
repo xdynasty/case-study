@@ -1,6 +1,18 @@
-.fas {
-  color: white;
+header a {
+	font-size: 13px;
+	color: #212529;
+	text-decoration: none;
 }
 
-#bagIcon {
+header h1 a{
+	font-size: 26px;
+	color: #666;
+}
+
+header h1 {
+	text-align: center;
+}
+
+a:hover {
+	color: black;
 }
