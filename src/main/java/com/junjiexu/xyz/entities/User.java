@@ -1,5 +1,6 @@
 package com.junjiexu.xyz.entities;
 
+import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.Basic;
@@ -8,34 +9,38 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 @Entity
 @Table(name="user")
-public class User {
+public class User{
 	@Id
-	private String email;
+	private String username;
 	@Basic
 	private String password;
 	
 	@OneToMany(mappedBy="user")
-	List<CartItem> cartItems;	
-	
+	List<CartItem> cartItems;
+
 	public User() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
-	
-	public User(String email, String password) {
+
+	public User(String username, String password, List<CartItem> cartItems) {
 		super();
-		this.email = email;
+		this.username = username;
 		this.password = password;
+		this.cartItems = cartItems;
 	}
 
-	
-	public String getEmail() {
-		return email;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -46,12 +51,20 @@ public class User {
 		this.password = password;
 	}
 
+	public List<CartItem> getCartItems() {
+		return cartItems;
+	}
+
+	public void setCartItems(List<CartItem> cartItems) {
+		this.cartItems = cartItems;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
+		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
 	}
 
@@ -64,17 +77,19 @@ public class User {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
-		if (email == null) {
-			if (other.email != null)
-				return false;
-		} else if (!email.equals(other.email))
-			return false;
 		if (password == null) {
 			if (other.password != null)
 				return false;
 		} else if (!password.equals(other.password))
 			return false;
+		if (username == null) {
+			if (other.username != null)
+				return false;
+		} else if (!username.equals(other.username))
+			return false;
 		return true;
-	}
+	}	
+	
+	
 	
 }

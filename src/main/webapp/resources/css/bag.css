@@ -1,7 +1,7 @@
 .product-img {
   height: 250px;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .product-tile {
@@ -10,4 +10,17 @@
 
 section {
   display: flex;
+}
+
+
+#purchaseBtn {
+	color: white;
+	background: #313131;
+	text-align: center;
+	padding: 5px;
+}
+
+
+#purchaseBtn:hover {
+	background: #0d6efd;
 }

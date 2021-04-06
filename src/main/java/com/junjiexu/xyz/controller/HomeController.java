@@ -1,26 +1,28 @@
 package com.junjiexu.xyz.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.junjiexu.xyz.daos.CartItemDao;
 import com.junjiexu.xyz.daos.ProductDao;
 import com.junjiexu.xyz.daos.StyleDao;
+import com.junjiexu.xyz.daos.UserDao;
 import com.junjiexu.xyz.entities.CartItem;
 import com.junjiexu.xyz.entities.Product;
 import com.junjiexu.xyz.entities.Quantity;
 import com.junjiexu.xyz.entities.Style;
 import com.junjiexu.xyz.entities.User;
+import com.junjiexu.xyz.services.StyleService;
 
 @Controller
 public class HomeController {
@@ -31,26 +33,15 @@ public class HomeController {
 	
 	
 	@GetMapping("/{type}")
-	public ModelAndView typeHandler(@PathVariable(value="type") String type) {
+	public ModelAndView productsHandler(@PathVariable(value="type") String type) {
 		ModelAndView mav = new ModelAndView("products");
-		ProductDao productDao = new ProductDao();
-		List<Product> products = productDao.getProductsByType(type);
-		List<Style> styles = new ArrayList<>();
-		for (Product product : products) {
-			for (Style style : product.getStyles()) {
-				styles.add(style);
-			}
-		}
-		for (Product product : products) {
-			System.out.println(product.getId());
-		}
-		System.out.println("PRODUCTS SIZE");
-		System.out.println(products.size());
-		System.out.println("STYLES SIZE");
-		System.out.println(styles.size());
+		StyleService ss = new StyleService();
+		List<Style> styles = ss.getAllStyles(type);
 		mav.addObject("styles", styles);
+		mav.addObject("type", type.toUpperCase());
 		return mav;
 	}
+	
 	
 	@GetMapping("/product/{styleId}")
 	public ModelAndView productHandler(@PathVariable(value="styleId") int styleId) {
@@ -72,9 +63,11 @@ public class HomeController {
 	}
 	
 	@GetMapping("/bag")
-	public ModelAndView bagHandler() {
+	public ModelAndView bagHandler(HttpSession session) {
+		System.out.println("USER: ");
+		System.out.println(session.getAttribute("user"));
 		CartItemDao cartItemDao = new CartItemDao();
-		List<CartItem> cartItems = cartItemDao.getAllCartItemsByUserEmail("junjie325@gmail.com");
+		List<CartItem> cartItems = cartItemDao.getAllCartItemsByUsername("junjie325@gmail.com");
 		for (CartItem ci: cartItems) {
 			System.out.println(ci.getStyle().getProduct().getName());
 		}
@@ -97,16 +90,58 @@ public class HomeController {
 	
 	@PostMapping("/register")
 	public ModelAndView registerHandler(@ModelAttribute(value="user") User user) {
-		ModelAndView mav = new ModelAndView("index");
-		System.out.println("EMAIL: ");
-		System.out.println(user.getEmail());
-		return mav;
+		System.out.println("username: ");
+		System.out.println(user.getUsername());
+		System.out.println("password: ");
+		System.out.println(user.getPassword());
+		UserDao userDao = new UserDao();
+		if (userDao.getUserByUsername(user.getUsername()) != null) {
+			ModelAndView mav = new ModelAndView("account");
+			mav.addObject("message", "ACCOUNT ALREADY EXISTS");
+			return mav;
+		} else {
+			ModelAndView mav = new ModelAndView("account");
+			mav.addObject("message", "ACCOUNT CREATED. PLEASE SIGN IN");
+			userDao.addUser(user);
+			return mav;
+		}
 	}
 	
-	@PostMapping("/add_product")
-	public void addProductHandler(HttpServletRequest request) {
+	@PostMapping("/signin")
+	public ModelAndView signinHandler(@ModelAttribute(value="user") User user, HttpSession session) {	
+		System.out.println("username: ");
+		System.out.println(user.getUsername());
+		System.out.println(user.getPassword());
+		UserDao userDao = new UserDao();
+		if (userDao.getUserByUsername(user.getUsername()) == null) {
+			ModelAndView mav = new ModelAndView("account");
+			mav.addObject("message", "INVALID CREDENTIALS");
+			return mav;
+		} else if (!userDao.getUserByUsername(user.getUsername()).getPassword().equals(user.getPassword())) {
+			ModelAndView mav = new ModelAndView("account");
+			mav.addObject("message", "INVALID CREDENTIALS");
+			return mav;
+		}
+		else {
+			ModelAndView mav = new ModelAndView("index");
+			session.setAttribute("user", user);
+			return mav;
+		}
+		
+	}
+	
+	@PostMapping("/add_cart_item")
+	public void addProductHandler(HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("PRINTING REQUEST PARAMETERS");
 		System.out.println(request.getParameter("styleId"));
-		System.out.println(request.getParameter("size"));
+		System.out.println(request.getParameter("size"));	
+		response.setStatus(HttpServletResponse.SC_CREATED);
+	}
+	
+	@PostMapping("/update_quantity")
+	public void updateQuantityHandler(HttpServletRequest request, HttpServletResponse response) {
+		System.out.println(request.getParameter("styleId"));
+		System.out.println(request.getParameter("newQuantity"));
+		response.setStatus(HttpServletResponse.SC_OK);
 	}
 }

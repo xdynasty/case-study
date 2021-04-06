@@ -35,6 +35,8 @@
       src="https://kit.fontawesome.com/b15d1bc6ae.js"
       crossorigin="anonymous"
     ></script>
+    
+ <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 						</head>
 						<body>
 							<jsp:include page="./header.jsp"/>
@@ -54,7 +56,7 @@
 												<div class="col-md-8">
 													<div class="row">
 														<div class="col">
-															<h3>${cartItem.style.product.name}</h3>
+															<h3><a href="${pageContext.request.contextPath}/product/${cartItem.style.id}" style="color: black">${cartItem.style.product.name}</a></h3>
 														</div>
 													</div>
 													<div class="row">
@@ -70,14 +72,14 @@
 														<div class="col">${cartItem.style.price}</div>
 													</div>
 													<div class="row">
-														<div class="col">Quantity</div>
-														<div class="col"><select><option>REMOVE</option>
+														<div class="col">QUANTITY</div>
+														<div class="col"><select data-style-id="${cartItem.style.id}" class="quantity-select"><option value="0">REMOVE</option>
 														<c:forEach items="${cartItem.style.quantities}" var="quantity">
 														<c:if test="${quantity.style == cartItem.style && quantity.id.size == cartItem.size}">
 															<c:forEach begin="1" end="${quantity.stockQuantity}" varStatus="loop">
 															<c:choose>
-															<c:when test="${loop.index == cartItem.cartQuantity }"><option selected>${loop.index }</option></c:when>
-															<c:otherwise><option>${loop.index }</option></c:otherwise>
+															<c:when test="${loop.index == cartItem.cartQuantity }"><option selected value="${loop.index}">${loop.index }</option></c:when>
+															<c:otherwise><option value="${loop.index}">${loop.index }</option></c:otherwise>
 															</c:choose>
 															</c:forEach>
 														</c:if>
@@ -99,22 +101,26 @@
 												</div>
 												<div class="row">
 													<div class="col">SUBTOTAL</div>
-													<div class="col order-value">2.32</div>
+													<div class="col order-value">
+														<c:set var="subtotal" value="${0}"/>
+														<c:forEach items="${cartItems}" var="cartItem">
+															<c:set var="subtotal" value="${subtotal + cartItem.style.price}"/>
+														</c:forEach>
+														$<c:out value="${subtotal}"/>
+													</div>
 												</div>
 												<div class="row">
 													<div class="col">SHIPPING</div>
-													<div class="col order-value">42.3</div>
+													<div class="col order-value">$100</div>
 												</div>
 												<div class="row">
 													<div class="col">TOTAL</div>
-													<div class="col order-value">23.23</div>
+													<div class="col order-value">$<c:out value="${subtotal + 100}"/></div>
 												</div>
 												<div class="row">
 													<div class="col">
 														<div class="d-grid">
-															<button type="submit" class="btn btn-primary">
-                      PURCHASE
-                    </button>
+															<a href="${pageContext.request.contextPath}/checkout" id="purchaseBtn">PURCHASE</a>
 														</div>
 													</div>
 												</div>

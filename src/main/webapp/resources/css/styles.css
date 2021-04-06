@@ -23,18 +23,44 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+	color: white;
+}
+
 .active {
   color: gray;
 }
 
-/* a:hover {
-  color: white;
-} */
+#header {
+	position: absolute;
+}
 
+#header:hover {
+	background: white;
+	transition: background 0.3s ease-in;
+}
+
+#header a {
+	font-size: 1.5em;
+}
+
+#header a:hover{
+	color: black;
+	transition: color 0.3s ease-in
+}
+
+#header:hover a {
+	color: black;
+}
 .panel-menu {
   height: 100%;
   font-size: 3em;
 }
+
+.panel-menu:hover {
+	background: rgba(0,0,0,0.5);
+	transition: background 0.3s ease-in;
+} 
 
 #men {
   background: url('../images/kris.jpg') center;

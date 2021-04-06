@@ -8,7 +8,7 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class CartItemId implements Serializable{
-	private String userEmail;
+	private String username;
 	@Column(name="STYLE_ID")
 	private int styleId;
 	
@@ -16,19 +16,18 @@ public class CartItemId implements Serializable{
 		super();
 	}
 
-	public CartItemId(String userEmail, int styleId) {
+	public CartItemId(String username, int styleId) {
 		super();
-		this.userEmail = userEmail;
+		this.username = username;
 		this.styleId = styleId;
 	}
 
-
-	public String getUserEmail() {
-		return userEmail;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserEmail(String userEmail) {
-		this.userEmail = userEmail;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public int getStyleId() {
@@ -44,7 +43,7 @@ public class CartItemId implements Serializable{
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + styleId;
-		result = prime * result + ((userEmail == null) ? 0 : userEmail.hashCode());
+		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
 	}
 
@@ -59,10 +58,10 @@ public class CartItemId implements Serializable{
 		CartItemId other = (CartItemId) obj;
 		if (styleId != other.styleId)
 			return false;
-		if (userEmail == null) {
-			if (other.userEmail != null)
+		if (username == null) {
+			if (other.username != null)
 				return false;
-		} else if (!userEmail.equals(other.userEmail))
+		} else if (!username.equals(other.username))
 			return false;
 		return true;
 	}

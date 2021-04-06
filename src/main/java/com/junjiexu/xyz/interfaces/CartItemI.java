@@ -5,8 +5,8 @@ import java.util.List;
 import com.junjiexu.xyz.entities.CartItem;
 
 public interface CartItemI {
-	List<CartItem> getAllCartItemsByUserEmail(String userEmail);
+	List<CartItem> getAllCartItemsByUsername(String username);
 	int addCartItem(CartItem ci);
-	int removeCartItem(String userEmail, int styleId);
+	int removeCartItem(String username, int styleId);
 	int updateCartItemCartQuantity(String userEmail, int styleId, int quantity);
 }

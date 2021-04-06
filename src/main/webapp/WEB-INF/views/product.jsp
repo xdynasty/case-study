@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -48,7 +49,7 @@
             <div class="col"><p id="productName">${style.product.name}</p></div>
           </div>
           <div class="row">
-            <div class="col"><p id="price">$${style.price }</p></div>
+            <div class="col"><p id="price">$<fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${style.price}"/></p></div>
           </div>
 
           <div class="row">
@@ -86,8 +87,8 @@
           
           <div class="row">
             <div class="col">
-              <p>IN STOCK</p>
-              <div class="d-grid">
+              
+              <div class="d-grid" style="margin-top: 25px">
                 <button type="submit" id="addBtn" class="button btn-dark">
                   ADD TO SHOPPING BAG
                 </button>
@@ -144,7 +145,7 @@
           <div class="modal-body">
             <div class="container-fluid">
               <div class="row">
-                <div class="col">Product No.</div>
+                <div class="col">PRODUCT NO.</div>
                 <div class="col" id="modalStyleId"></div>
               </div>
               <div class="row">

@@ -1,5 +1,5 @@
 #carousel {
-  height: 600px;
+  height: 660px;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
@@ -9,12 +9,12 @@
   display: none;
 }
 #carousel img {
-  height: 200px;
-  object-fit: cover;
+  height: 220px;
+  object-fit: contain;
 }
 
 #mainImg {
-  max-height: 600px;
+  max-height: 660px;
   width: 90%;
   object-fit: contain;
 }

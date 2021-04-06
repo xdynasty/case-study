@@ -25,7 +25,7 @@ public class CartItem {
 	@MapsId("styleId")
 	@OneToOne
 	private Style style;
-	@MapsId("userEmail")
+	@MapsId("username")
 	@ManyToOne
 	private User user;
 

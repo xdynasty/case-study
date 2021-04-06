@@ -32,14 +32,15 @@
   <body>
      <jsp:include page="./header.jsp"/>
     <div class="container-fluid" id="main">
+    <div class="row"><div class="col" style="text-align: center">${message}</div></div>
       <div class="row">
         <div class="col-md-2"></div>
         <div class="col">
           <h2 class="text-center">SIGN IN</h2>
-          <form method="POST" action="/signin">
+          <form method="POST" action="signin">
             <div class="row">
               <div class="col">
-                <input type="email" class="form-control" placeholder="Email" name="email"/>
+                <input type="email" class="form-control" placeholder="Email" name="username"/>
               </div>
             </div>
             <div class="row">
@@ -70,7 +71,7 @@
           <form method="POST" action="register">
             <div class="row">
               <div class="col">
-                <input type="email" class="form-control" placeholder="Email" name="email"/>
+                <input type="email" class="form-control" placeholder="Email" name="username"/>
               </div>
             </div>
             

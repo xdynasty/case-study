@@ -56,7 +56,7 @@ styleId = styleId[styleId.length - 1];
       $('#modalStyle').text($("#styleSelection").text());
       $('#modalSize').text(selectedSize);
       $('#bagModal').modal('show');
-      axios.post("http://localhost:8080/case-study/add_product", null, {
+      axios.post("http://localhost:8080/case-study/add_cart_item", null, {
       	params: {
       	styleId,
       	size: selectedSize,	

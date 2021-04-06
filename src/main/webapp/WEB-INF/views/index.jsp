@@ -25,7 +25,7 @@
     ></script>
   </head>
   <body>
-    <header class="container-fluid bg-dark">
+    <header class="container-fluid" id="header">
       <div class="row">
         <div class="col"><div id="flash"></div></div>
       </div>

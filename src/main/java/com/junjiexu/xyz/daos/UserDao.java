@@ -1,5 +1,6 @@
 package com.junjiexu.xyz.daos;
 
+
 import com.junjiexu.xyz.entities.User;
 import com.junjiexu.xyz.interfaces.UserI;
 
@@ -24,11 +25,11 @@ public class UserDao extends AbstractDao implements UserI {
 	}
 
 	@Override
-	public User getUser(String email) {
+	public User getUserByUsername(String username) {
 		try {
 			System.out.println("getUser");
 			connect();
-			return em.find(User.class, email);
+			return em.find(User.class, username);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
