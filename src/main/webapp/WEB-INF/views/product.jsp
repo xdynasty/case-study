@@ -30,6 +30,7 @@
       src="https://kit.fontawesome.com/b15d1bc6ae.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
@@ -175,8 +176,8 @@
                 </div>
                 <div class="col">
                   <div class="d-grid">
-                    <a href="${pageContext.request.contextPath}/checkout"><button type="button" class="btn btn-dark" id="checkoutBtn">
-                      CHECKOUT
+                    <a href="${pageContext.request.contextPath}/bag"><button type="button" class="btn btn-dark" id="checkoutBtn">
+                      VIEW BAG
                     </button></a>
                   </div>
                 </div>

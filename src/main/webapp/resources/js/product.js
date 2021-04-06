@@ -45,9 +45,12 @@ styleId = styleId[styleId.length - 1];
   });
 
   $('#addBtn').click(() => {
+  console.log(Cookies.get("sid"));
     if (!selectedSize) {
       console.log('selectedSize', selectedSize);
       alert('MUST SELECT A SIZE');
+    } else if (!Cookies.get("sid")) {
+   		window.location.href= "../account";
     } else {
       console.log('selectedSize', selectedSize);
       $('.modal-title').text($("#productName").text());
