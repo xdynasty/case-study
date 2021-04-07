@@ -6,6 +6,13 @@ import com.junjiexu.xyz.interfaces.UserI;
 
 public class UserDao extends AbstractDao implements UserI {
 
+	
+	/** 
+	 * adds single user to database
+	 * @param user user to be added
+	 * @return integer specifying a specifying a successful or failed addition
+	 * 
+	 * */
 	@Override
 	public int addUser(User user) {
 		try {
@@ -24,6 +31,12 @@ public class UserDao extends AbstractDao implements UserI {
 		}
 	}
 
+	/** 
+	 * retrieves user corresponding to username
+	 * @param username username of user
+	 * @return User
+	 * 
+	 * */
 	@Override
 	public User getUserByUsername(String username) {
 		try {

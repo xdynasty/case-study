@@ -10,6 +10,14 @@ import javax.persistence.Table;
 
 import com.junjiexu.xyz.compositeIds.QuantityId;
 
+
+
+/** 
+ * 
+ * Entity Class Quantity
+ * 
+ * */
+
 @Entity
 @Table(name="quantity")
 public class Quantity {

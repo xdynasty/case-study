@@ -10,6 +10,13 @@ import com.junjiexu.xyz.interfaces.StyleI;
 
 public class StyleDao extends AbstractDao implements StyleI {
 
+	
+	/** 
+	 * retrieves list of styles of a product
+	 * @param productId id of product
+	 * @return list of Styles
+	 * 
+	 * */
 	@Override
 	public List<Style> getStylesByProductId(int productId) {
 		try {
@@ -29,6 +36,13 @@ public class StyleDao extends AbstractDao implements StyleI {
 		}
 	}
 
+	
+	/** 
+	 * adds style of a product to
+	 * @param style new style to be added
+	 * @return integer specifying a specifying a successful or failed addition
+	 * 
+	 * */
 	@Override
 	public int addStyle(Style style) {
 		try {
@@ -47,6 +61,12 @@ public class StyleDao extends AbstractDao implements StyleI {
 		}
 	}
 
+	/** 
+	 * retrieves style corresponding to styleId
+	 * @param id styleId
+	 * @return Style
+	 * 
+	 * */
 	@Override
 	public Style getStyleById(int id) {
 		try {

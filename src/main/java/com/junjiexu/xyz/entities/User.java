@@ -12,6 +12,14 @@ import javax.persistence.Table;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+
+
+/** 
+ * 
+ * Entity Class for User
+ * 
+ * */
+
 @Entity
 @Table(name="user")
 public class User{

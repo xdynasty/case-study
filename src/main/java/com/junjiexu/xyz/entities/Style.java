@@ -11,6 +11,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+
+/** 
+ * 
+ * Entity Class for Style
+ * 
+ * */
+
 @Entity
 @Table(name="style")
 public class Style {

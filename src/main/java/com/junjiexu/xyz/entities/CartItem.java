@@ -12,6 +12,13 @@ import javax.persistence.Table;
 
 import com.junjiexu.xyz.compositeIds.CartItemId;
 
+
+/** 
+ * 
+ * Entity Class for Cart Item
+ * 
+ * */
+
 @Entity
 @Table(name="cart_item")
 public class CartItem {

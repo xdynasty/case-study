@@ -10,6 +10,14 @@ import com.junjiexu.xyz.interfaces.CartItemI;
 
 public class CartItemDao extends AbstractDao implements CartItemI{
 
+	
+
+	/** 
+	 * retrieves all cartItems of user
+	 * @param username username of user
+	 * @return list of cartItems
+	 * 
+	 * */
 	@Override
 	public List<CartItem> getAllCartItemsByUsername(String username) {
 		try {
@@ -28,6 +36,13 @@ public class CartItemDao extends AbstractDao implements CartItemI{
 		}
 	}
 
+	
+	/** 
+	 * adds cartItem corresponding to user
+	 * @param ci cartItem to be added
+	 * @return integer specifying a specifying a successful or failed addition
+	 * 
+	 * */
 	@Override
 	public int addCartItem(CartItem ci) {
 		try {
@@ -46,6 +61,14 @@ public class CartItemDao extends AbstractDao implements CartItemI{
 		}
 	}
 
+	
+	/** 
+	 * removes cartItem corresponding to user and styleId
+	 * @param username username of user
+	 * @param styleId styleId of cartItem
+	 * @return integer specifying a specifying a successful or failed removal
+	 * 
+	 * */
 	@Override
 	public int removeCartItem(String username, int styleId) {
 		try {
@@ -68,6 +91,15 @@ public class CartItemDao extends AbstractDao implements CartItemI{
 		}
 	}
 
+	
+	/** 
+	 * updates cartItem quantity
+	 * @param username username of user
+	 * @param styleId styleId of cartItem
+	 * @param cartQuantity new quantity of cartItem
+	 * @return integer specifying a specifying a successful or failed update
+	 * 
+	 * */
 	@Override
 	public int updateCartItemCartQuantity(String username, int styleId, int cartQuantity) {
 		
@@ -91,6 +123,13 @@ public class CartItemDao extends AbstractDao implements CartItemI{
 		}
 	}
 
+	
+	/** 
+	 * retrieves cartItem corresponding to cartItemId
+	 * @param cartItemId id of cartItem
+	 * @return CartItem cartItem corresponding to the specified cartItemId
+	 * 
+	 * */
 	@Override
 	public CartItem getCartItemByCartItemId(CartItemId cartItemId) {
 		try {

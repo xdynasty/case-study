@@ -8,6 +8,14 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+
+
+/** 
+ * 
+ * Entity Class for Product
+ * 
+ * */
+
 @Entity
 @Table(name="product")
 public class Product {

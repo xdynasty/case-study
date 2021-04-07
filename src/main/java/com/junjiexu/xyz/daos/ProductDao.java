@@ -10,6 +10,13 @@ import com.junjiexu.xyz.interfaces.ProductI;
 
 public class ProductDao extends AbstractDao implements ProductI{
 
+	
+	/** 
+	 * returns list of products by specified type
+	 * @param type the type of product
+	 * @return list of products
+	 * 
+	 * */
 	@Override
 	public List<Product> getProductsByType(String type) {
 		try {
@@ -31,6 +38,12 @@ public class ProductDao extends AbstractDao implements ProductI{
 		}
 	}
 
+	/** 
+	 * adds a single product to database
+	 * @param product product to be added
+	 * @return integer specifying a specifying a successful or failed transaction
+	 * 
+	 * */
 	@Override
 	public int addProduct(Product product) {
 		try {
@@ -49,6 +62,13 @@ public class ProductDao extends AbstractDao implements ProductI{
 		}
 	}
 
+	
+	/** 
+	 * returns a single product specified by productId
+	 * @param id id of the product
+	 * @return product
+	 * 
+	 * */
 	@Override
 	public Product getProductById(int id) {
 		try {
