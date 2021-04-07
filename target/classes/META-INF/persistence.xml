@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="xyz">
-	<class>com.junjiexu.xyz.compositeIds.CartItemId</class>
-	<class>com.junjiexu.xyz.compositeIds.QuantityId</class>
-		<class>com.junjiexu.xyz.entities.CartItem</class>
-		<class>com.junjiexu.xyz.entities.Product</class>
-		<class>com.junjiexu.xyz.entities.Quantity</class>
-		<class>com.junjiexu.xyz.entities.Style</class>
-		<class>com.junjiexu.xyz.entities.User</class>
+	<class>xyz.junjie.xu.compositeIds.CartItemId</class>
+	<class>xyz.junjie.xu.compositeIds.QuantityId</class>
+		<class>xyz.junjie.xu.entities.CartItem</class>
+		<class>xyz.junjie.xu.entities.Product</class>
+		<class>xyz.junjie.xu.entities.Quantity</class>
+		<class>xyz.junjie.xu.entities.Style</class>
+		<class>xyz.junjie.xu.entities.User</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/xyz" />

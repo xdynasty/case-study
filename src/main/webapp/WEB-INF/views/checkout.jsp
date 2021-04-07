@@ -96,7 +96,7 @@
             <div class="col order-value">
 				<c:set var="subtotal" value="${0}"/>
 				<c:forEach items="${cartItems}" var="cartItem">
-				<c:set var="subtotal" value="${subtotal + cartItem.style.price}"/>
+				<c:set var="subtotal" value="${subtotal + (cartItem.style.price * cartItem.cartQuantity)}"/>
 				</c:forEach>
 				$<fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${subtotal}"/>
 			</div>

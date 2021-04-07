@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%><%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    <%@ page import="com.junjiexu.xyz.entities.CartItem" %>
+    <%@ page import="xyz.junjie.xu.entities.CartItem" %>
     <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
@@ -106,7 +106,7 @@
 													<div class="col order-value">
 														<c:set var="subtotal" value="${0}"/>
 														<c:forEach items="${cartItems}" var="cartItem">
-															<c:set var="subtotal" value="${subtotal + cartItem.style.price}"/>
+															<c:set var="subtotal" value="${subtotal + (cartItem.style.price * cartItem.cartQuantity) }"/>
 														</c:forEach>
 														$<fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${subtotal}"/>
 													</div>
