@@ -19,6 +19,7 @@ XYZ is an e-commerce web application that sells apparel. A user is able to brows
 * Bootstrap
 * jQuery
 * Maven
+* JSP
 
 ## Credits
 Product images rights belong to Neiman Marcus.

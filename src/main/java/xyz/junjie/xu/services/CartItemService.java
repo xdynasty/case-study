@@ -1,7 +1,5 @@
 package xyz.junjie.xu.services;
 
-import javax.servlet.http.HttpServletResponse;
-
 import xyz.junjie.xu.compositeIds.CartItemId;
 import xyz.junjie.xu.daos.CartItemDao;
 import xyz.junjie.xu.daos.QuantityDao;

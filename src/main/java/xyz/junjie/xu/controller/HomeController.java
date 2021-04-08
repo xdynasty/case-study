@@ -16,9 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
-import xyz.junjie.xu.compositeIds.CartItemId;
 import xyz.junjie.xu.daos.CartItemDao;
-import xyz.junjie.xu.daos.QuantityDao;
 import xyz.junjie.xu.daos.StyleDao;
 import xyz.junjie.xu.daos.UserDao;
 import xyz.junjie.xu.entities.CartItem;

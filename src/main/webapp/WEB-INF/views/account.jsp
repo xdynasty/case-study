@@ -69,7 +69,7 @@
         <div class="col-md-2"></div>
         <div class="col">
           <h2 class="text-center">NEW TO XYZ?</h2>
-          <form method="POST" action="register">
+          <form method="POST" action="register" id="registerForm">
             <div class="row">
               <div class="col">
                 <input type="email" class="form-control" placeholder="Email" name="username"/>
@@ -115,5 +115,8 @@
       integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
       crossorigin="anonymous"
     ></script>
+    <script src="
+								<c:url value="/resources/js/account.js" />">
+							</script>
   </body>
 </html>
