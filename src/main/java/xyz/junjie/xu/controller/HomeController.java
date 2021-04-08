@@ -24,6 +24,7 @@ import xyz.junjie.xu.daos.UserDao;
 import xyz.junjie.xu.entities.CartItem;
 import xyz.junjie.xu.entities.Style;
 import xyz.junjie.xu.entities.User;
+import xyz.junjie.xu.services.CartItemService;
 import xyz.junjie.xu.services.StyleService;
 import xyz.junjie.xu.services.UserService;
 
@@ -124,30 +125,20 @@ public class HomeController {
 	}
 	
 	@PostMapping("/add_cart_item")
-	public void addProductHandler(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws IOException {
+	public void addCartItemHandler(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws IOException {
 		User user = null;
 		if (session.getAttribute("user") != null) {
 			user = (User) session.getAttribute("user");
 		}
 		int styleId = Integer.parseInt(request.getParameter("styleId"));
 		String size = request.getParameter("size");
-		CartItemDao cartItemDao = new CartItemDao();
-		StyleDao styleDao = new StyleDao();
-		QuantityDao quantityDao = new QuantityDao();
-		CartItemId cartItemId = new CartItemId(user.getUsername(), styleId);
-		CartItem ci = cartItemDao.getCartItemByCartItemId(cartItemId);
-		if (user != null) {
-			if (ci != null && quantityDao.getQuantityByStyleIdAndSize(styleId, size).getStockQuantity() >= ci.getCartQuantity() + 1) {
-				cartItemDao.updateCartItemCartQuantity(user.getUsername(), styleId, ci.getCartQuantity() + 1);
-				response.setStatus(HttpServletResponse.SC_CREATED);
-			} else if (ci != null && quantityDao.getQuantityByStyleIdAndSize(styleId, size).getStockQuantity() < ci.getCartQuantity() + 1) {
-				response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-			} else {
-				cartItemDao.addCartItem(new CartItem(new CartItemId(user.getUsername(), styleId), size, 1, styleDao.getStyleById(styleId), user));
-				response.setStatus(HttpServletResponse.SC_CREATED);
-			}
-		} else {
+		if (user == null) {
 			response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+		} else {
+			CartItemService cis = new CartItemService();
+			int result = cis.addCartItem(user, styleId, size);
+			if (result == 1) response.setStatus(HttpServletResponse.SC_CREATED);
+			else response.setStatus(HttpServletResponse.SC_FORBIDDEN);
 		}
 		
 	}
@@ -158,12 +149,8 @@ public class HomeController {
 		String username = user.getUsername();
 		int styleId = Integer.parseInt(request.getParameter("styleId"));
 		int newQuantity = Integer.parseInt(request.getParameter("newQuantity"));
-		CartItemDao cartItemDao = new CartItemDao();
-		if (newQuantity > 0) {
-			cartItemDao.updateCartItemCartQuantity(username, styleId, newQuantity);
-		} else {
-			cartItemDao.removeCartItem(username, styleId);
-		}	 
+		CartItemService cis = new CartItemService();
+		cis.updateQuantity(username, styleId, newQuantity);
 		response.setStatus(HttpServletResponse.SC_OK);
 	}
 }
