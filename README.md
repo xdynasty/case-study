@@ -23,7 +23,14 @@ XYZ is an e-commerce web application that sells apparel. A user is able to brows
 ## Credits
 Product images rights belong to Neiman Marcus.
 
-## Demo
+## Demo Images
+
+<details>
+<summary>Entity Relationship Diagram</summary>
+<br>
+
+![](demo/erd.png)
+</details>
 
 <details>
 <summary>Index</summary>

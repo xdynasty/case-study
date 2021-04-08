@@ -257,7 +257,7 @@ public class MainRunner {
 				new String[] {
 						"https://case-study.s3.us-east-2.amazonaws.com/images/18/t1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/18/t2.webp"
 				}, new String[] {
-						"https://case-study.s3.us-east-2.amazonaws.com/images/18/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/18/2.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/18/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/18/4.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/18/5.webp"}, 832.87, null));
+						"https://case-study.s3.us-east-2.amazonaws.com/images/18/1.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/18/2.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/18/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/18/4.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/18/5.webp"}, 832.87, null));
 		styleDao.addStyle(new Style(19, productDao.getProductById(16), "WHITE", 
 				new String[] {
 						"https://case-study.s3.us-east-2.amazonaws.com/images/19/t1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/19/t2.webp"
