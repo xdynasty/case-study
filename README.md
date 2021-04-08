@@ -1,7 +1,7 @@
 # Case Study
 
 ## Description
-XYZ is an e-commerce web application that sells apparel. A user is able to browse products, sign up for an account, log in to his/her account, add items to a shopping bag, and checkout.
+XYZ is an e-commerce web application for a clothing retailer. A user is able to browse products, sign up for an account, log in to his/her account, add items to a shopping bag, and checkout.
 
 
 ## Table of Contents
