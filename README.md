@@ -17,6 +17,8 @@ XYZ is an e-commerce web application that sells apparel. A user is able to brows
 * AWS S3 Buckets
 * MySQL
 * Bootstrap
+* jQuery
+* Maven
 
 ## Credits
 Product images rights belong to Neiman Marcus.
@@ -45,19 +47,11 @@ Product images rights belong to Neiman Marcus.
 </details>
 
 <details>
-<summary>Product</summary>
-<br>
-
-![](demo/product.png)
-</details>
-
-<details>
 <summary>Bag</summary>
 <br>
 
 ![](demo/bag.png)
 </details>
-
 
 <details>
 <summary>Account</summary>
@@ -65,7 +59,6 @@ Product images rights belong to Neiman Marcus.
 
 ![](demo/account.png)
 </details>
-
 
 <details>
 <summary>Checkout</summary>

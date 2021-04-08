@@ -1,13 +1,10 @@
 package xyz.junjie.xu.main;
 
-import xyz.junjie.xu.compositeIds.CartItemId;
 import xyz.junjie.xu.compositeIds.QuantityId;
-import xyz.junjie.xu.daos.CartItemDao;
 import xyz.junjie.xu.daos.ProductDao;
 import xyz.junjie.xu.daos.QuantityDao;
 import xyz.junjie.xu.daos.StyleDao;
 import xyz.junjie.xu.daos.UserDao;
-import xyz.junjie.xu.entities.CartItem;
 import xyz.junjie.xu.entities.Product;
 import xyz.junjie.xu.entities.Quantity;
 import xyz.junjie.xu.entities.Style;
@@ -16,15 +13,7 @@ import xyz.junjie.xu.entities.User;
 public class MainRunner {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-	
-//		ProductDao productDao = new ProductDao();
-//		productDao.getProductsByType("MEN");
-//		QuantityDao quantityDao = new QuantityDao();
-//		quantityDao.updateQuantityByStyleIdAndSize(2, "30", 4);
 		populateTable();
-//		StyleDao styleDao = new StyleDao();
-//		styleDao.getStylesByProductId(3).forEach(style -> System.out.println(style.getName()));
 	}
 	
 	
