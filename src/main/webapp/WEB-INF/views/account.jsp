@@ -29,12 +29,16 @@
       src="https://kit.fontawesome.com/b15d1bc6ae.js"
       crossorigin="anonymous"
     ></script>
-   
+   <style>
+   	#message {
+   		background-color: red;
+   	}
+   </style>
   </head>
   <body>
      <jsp:include page="./navbar.jsp"/>
     <div class="container-fluid" id="main">
-    <div class="row"><div class="col" style="text-align: center">${message}</div></div>
+    <div class="row"><div class="col" style="text-align: center" id="message">${message}</div></div>
       <div class="row">
         <div class="col-md-2"></div>
         <div class="col">

@@ -48,7 +48,7 @@
 									<div class="tile">
 										<a href="${pageContext.request.contextPath}/product/${style.id}">
 											<div class="inner">
-												<img class="tile-img" src="${style.previewImages[0]}"/>
+												<img class="tile-img" src="${style.previewImages[0]}"  data-image1="${style.previewImages[0]}" data-image2="${style.previewImages[1]}"/>
 													<p class="product-name">
 														<c:out value="${style.product.name}"/>
 													</p>
@@ -66,5 +66,6 @@
       integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
       crossorigin="anonymous"
     ></script>
+     <script src="<c:url value="/resources/js/products.js" />"></script>
 					</body>
 				</html>
