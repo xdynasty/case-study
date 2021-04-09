@@ -13,16 +13,16 @@ XYZ is an e-commerce web application for a clothing retailer. A user is able to 
 6. [Demo](#Demo-Images)
 
 ## User-Stories
-* As a user who is not logged in, I can browse all products of all types
-* As a user who is not logged in, I can view the details of a specific product
-* As a user who is not logged in, I can view the images of a specific product
-* As a user who is not logged in, I can view different style of a product if applicable
-* As a user who is not logged in, I can view all the sizes of a product
-* As a user who is not logged in, I can register for an account
-* As a user who is logged in, I can add an item to my shopping bag
-* As a user who is logged in, I can check out my shopping bag
-* As a user who is logged in, I can update the quantity of an item in my shopping bag
-* As a user who is logged in, I can remove an item from my shopping bag
+* As a user who is not logged in, I can browse all products of all types so that I know what items are for sale
+* As a user who is not logged in, I can view the details of a specific product so that I can learn about the product
+* As a user who is not logged in, I can view the images of a specific product so that I can see what the product looks like from multiple angles
+* As a user who is not logged in, I can view different style of a product if applicable so that I can select a different color of the same product
+* As a user who is not logged in, I can view all the sizes of a product so that I can select a size that I prefer
+* As a user who is not logged in, I can register for an account so that I can add products to my shopping bag
+* As a user who is logged in, I can add an item to my shopping bag so that I can save products that I intend to purchase
+* As a user who is logged in, I can check out my shopping bag so that I receive the product in exchange for payment
+* As a user who is logged in, I can update the quantity of an item in my shopping bag so that I can buy more than one if more than one of the product is in stock
+* As a user who is logged in, I can remove an item from my shopping bag so that I can buy only the products I want
 
 ## Challenges
 * Implementing Composite Key with JPA - A composite(compound) key is an identifier that is uses two or more columns. Two of the tables in my database did not logically require any numerical key. Instead, they relied on the combinations of two separate foreign keys. To implement such a feature in JPA, two solutions exists. I could implement a surrogate key to fulfill the id column requirement. But, my solution used the @EmbeddedId annotation to specify a primary key object in addition to a field specifying a mapping. I was able to fetch any record in the database using the composite key rather than a single id field.
