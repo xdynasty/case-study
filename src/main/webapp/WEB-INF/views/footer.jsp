@@ -11,7 +11,7 @@
 		      		<label for="subscribeEmailInput" class="form-label"><small>SUBSCRIBE TO OUR MAILING LIST</small></label>
 		      		<div class="row">
 		      	<div class="col-md-8">
-		    		<input type="email" class="form-control" id="subscribeEmailInput">
+		    		<input type="email" class="form-control" id="subscribeEmailInput" placeholder="EMAIL">
 		    	</div>
 		    	<div class="col">
 		    		<button type="button" class="btn btn-primary">SUBSCRIBE</button>

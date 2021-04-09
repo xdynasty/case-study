@@ -315,6 +315,7 @@ public class MainRunner {
 		
 		UserDao userDao = new UserDao();
 		userDao.addUser(new User("junjie325@gmail.com", "pass123", null));
+		userDao.addUser(new User("xyz@gmail.com", "123", null));
 //		CartItemDao cartItemDao = new CartItemDao();
 //		 cartItemDao.addCartItem(new CartItem(new CartItemId("junjie325@gmail.com", 3), "8.5", 1, styleDao.getStyleById(3), userDao.getUser("junjie325@gmail.com"), quantityDao.getQuantityByStyleIdAndSize(3, "8.5")));
 //		 cartItemDao.addCartItem(new CartItem(new CartItemId("junjie325@gmail.com", 5), "OS", 1, styleDao.getStyleById(5), userDao.getUser("junjie325@gmail.com"), quantityDao.getQuantityByStyleIdAndSize(5, "OS")));
