@@ -40,7 +40,7 @@ Product images rights belong to Neiman Marcus.
 ## Demo-Images
 
 <details>
-<summary>Entity Relationship Diagram</summary>
+<summary>Schema Diagram</summary>
 <br>
 
 ![](demo/erd.png)
