@@ -2,7 +2,7 @@ $(() => {
   let flashMsgs = [
     'Import Fees Included',
     'Free Express Shipping Over $500',
-    'CNY Sale',
+    'Sale',
   ];
   let flashMsgI = 0;
   let flashEle = $('#flash');

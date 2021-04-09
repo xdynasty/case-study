@@ -18,6 +18,7 @@
     />
   	<link href="<c:url value="/resources/css/index.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/css/flash.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/footer.css" />" rel="stylesheet">
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
@@ -77,7 +78,7 @@
         </div>
       </div>
     </div>
-    
+    <jsp:include page="./footer.jsp"/>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"

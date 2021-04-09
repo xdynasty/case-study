@@ -22,6 +22,8 @@ import xyz.junjie.xu.daos.UserDao;
 import xyz.junjie.xu.entities.CartItem;
 import xyz.junjie.xu.entities.Style;
 import xyz.junjie.xu.entities.User;
+import xyz.junjie.xu.exceptions.InvalidPasswordException;
+import xyz.junjie.xu.exceptions.InvalidUsernameException;
 import xyz.junjie.xu.services.CartItemService;
 import xyz.junjie.xu.services.StyleService;
 import xyz.junjie.xu.services.UserService;
@@ -95,9 +97,17 @@ public class HomeController {
 			return mav;
 		} else {
 			ModelAndView mav = new ModelAndView("account");
-			mav.addObject("message", "ACCOUNT CREATED. PLEASE SIGN IN");
 			UserService us = new UserService();
-			us.registerUser(user);
+			try {
+				us.registerUser(user);
+				mav.addObject("message", "ACCOUNT CREATED. PLEASE SIGN IN");
+			} catch (InvalidPasswordException e) {
+				e.printStackTrace();
+				mav.addObject("message", "PASSWORD MUST BE LONGER THAN 3 CHARACTERS");
+			} catch (InvalidUsernameException e) {
+				e.printStackTrace();
+				mav.addObject("message", "USERNAME IS INVALID");
+			}
 			return mav;
 		}
 	}

@@ -8,7 +8,7 @@ XYZ is an e-commerce web application for a clothing retailer. A user is able to 
 1. [User-Stories](#User-Stories)
 2. [Tech Stack](#Tech-Stack)
 3. [Credits](#Credits)
-4. [Demo](#Demo)
+4. [Demo](#Demo-Images)
 
 ## User-Stories
 * As a user who is not logged in, I can browse all products of all types
@@ -37,7 +37,7 @@ XYZ is an e-commerce web application for a clothing retailer. A user is able to 
 ## Credits
 Product images rights belong to Neiman Marcus.
 
-## Demo Images
+## Demo-Images
 
 <details>
 <summary>Entity Relationship Diagram</summary>
