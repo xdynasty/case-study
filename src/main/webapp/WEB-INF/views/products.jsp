@@ -20,6 +20,7 @@
 			<link href="
 				<c:url value="/resources/css/products.css" />" rel="stylesheet">
 				<link href="<c:url value="/resources/css/footer.css" />" rel="stylesheet">
+				<link href="<c:url value="/resources/css/button.css" />" rel="stylesheet">
 				<link href="
 					<c:url value="/resources/css/main.css" />" rel="stylesheet"><link href="<c:url value="/resources/css/navbar.css" />" rel="stylesheet">
 					<script

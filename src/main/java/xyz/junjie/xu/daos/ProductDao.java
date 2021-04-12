@@ -26,9 +26,6 @@ public class ProductDao extends AbstractDao implements ProductI{
 			Query query = em.createQuery("SELECT p from Product p WHERE p.type LIKE :type");
 			query.setParameter("type", type);
 			List<Product> products = query.getResultList();
-			System.out.println("PRINTING " + type + " PRODUCTS");
-			products.forEach(product -> {System.out.println(product.getName());
-			System.out.println(Arrays.toString(product.getDetails()));});
 			return products;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -47,8 +44,8 @@ public class ProductDao extends AbstractDao implements ProductI{
 	@Override
 	public int addProduct(Product product) {
 		try {
-			System.out.println("addProduct");
-			System.out.println("product: " + product);
+//			System.out.println("addProduct");
+//			System.out.println("product: " + product);
 			connect();
 			em.getTransaction().begin();
 			em.persist(product);
@@ -72,8 +69,8 @@ public class ProductDao extends AbstractDao implements ProductI{
 	@Override
 	public Product getProductById(int id) {
 		try {
-			System.out.println("getProductById");
-			System.out.println("id: " + id);
+//			System.out.println("getProductById");
+//			System.out.println("id: " + id);
 			connect();
 			return em.find(Product.class, id);
 		} catch (Exception e) {

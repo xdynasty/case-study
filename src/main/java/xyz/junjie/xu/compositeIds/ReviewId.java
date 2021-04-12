@@ -5,40 +5,47 @@ import javax.persistence.Embeddable;
 
 
 @Embeddable
-public class QuantityId implements Serializable{
+public class ReviewId implements Serializable {
 	
 	private int styleId;
-	private String size;
 	
-	public QuantityId() {
-		super();
-	}
-	public QuantityId(int styleId, String size) {
+	private String username;
+	
+	public ReviewId(int styleId, String username) {
 		super();
 		this.styleId = styleId;
-		this.size = size;
+		this.username = username;
 	}
 	
+	public ReviewId() {
+		super();
+	}
+
 	public int getStyleId() {
 		return styleId;
 	}
+
 	public void setStyleId(int styleId) {
 		this.styleId = styleId;
 	}
-	public String getSize() {
-		return size;
+
+	public String getUsername() {
+		return username;
 	}
-	public void setSize(String size) {
-		this.size = size;
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((size == null) ? 0 : size.hashCode());
 		result = prime * result + styleId;
+		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -47,13 +54,13 @@ public class QuantityId implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		QuantityId other = (QuantityId) obj;
-		if (size == null) {
-			if (other.size != null)
-				return false;
-		} else if (!size.equals(other.size))
-			return false;
+		ReviewId other = (ReviewId) obj;
 		if (styleId != other.styleId)
+			return false;
+		if (username == null) {
+			if (other.username != null)
+				return false;
+		} else if (!username.equals(other.username))
 			return false;
 		return true;
 	}

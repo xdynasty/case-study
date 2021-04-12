@@ -22,7 +22,7 @@ class TestStyleDao {
 						"https://case-study.s3.us-east-2.amazonaws.com/images/1/t1.jpeg",
 						"https://case-study.s3.us-east-2.amazonaws.com/images/1/t2.jpeg"
 				}, new String[] {
-						"https://case-study.s3.us-east-2.amazonaws.com/images/1/1.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/1/2.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/1/3.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/1/4.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/1/5.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/1/6.jpeg"}, 3234.30, null);
+						"https://case-study.s3.us-east-2.amazonaws.com/images/1/1.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/1/2.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/1/3.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/1/4.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/1/5.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/1/6.jpeg"}, 3234.30, null, null);
 		
 		Style actual = styleDao.getStyleById(1);
 		Assertions.assertEquals(expected, actual);

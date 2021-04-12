@@ -21,8 +21,8 @@ public class CartItemDao extends AbstractDao implements CartItemI{
 	@Override
 	public List<CartItem> getAllCartItemsByUsername(String username) {
 		try {
-			System.out.println("getAllCartItemsByUserEmail");
-			System.out.println("username: " + username);
+//			System.out.println("getAllCartItemsByUserEmail");
+//			System.out.println("username: " + username);
 			connect();
 			Query query = em.createQuery("SELECT ci from CartItem ci WHERE ci.id.username = :username");
 			query.setParameter("username", username);
@@ -46,8 +46,8 @@ public class CartItemDao extends AbstractDao implements CartItemI{
 	@Override
 	public int addCartItem(CartItem ci) {
 		try {
-			System.out.println("addCartItem");
-			System.out.println("CartItem: " + ci);
+//			System.out.println("addCartItem");
+//			System.out.println("CartItem: " + ci);
 			connect();
 			em.getTransaction().begin();
 			em.persist(ci);
@@ -72,14 +72,12 @@ public class CartItemDao extends AbstractDao implements CartItemI{
 	@Override
 	public int removeCartItem(String username, int styleId) {
 		try {
-			System.out.println("removeCartItem");
-			System.out.println("username: " + username);
-			System.out.println("styleId: " + styleId);
+//			System.out.println("removeCartItem");
+//			System.out.println("username: " + username);
+//			System.out.println("styleId: " + styleId);
 			connect();
 			em.getTransaction().begin();
 			CartItem ci = em.find(CartItem.class, new CartItemId(username, styleId));
-			System.out.println("REMOVING");
-			System.out.println(ci.getCartQuantity());
 			em.remove(ci);
 			em.getTransaction().commit();
 			return 1;
@@ -104,14 +102,13 @@ public class CartItemDao extends AbstractDao implements CartItemI{
 	public int updateCartItemCartQuantity(String username, int styleId, int cartQuantity) {
 		
 		try {
-			System.out.println("updateCartItemQuantity");
-			System.out.println("username: " + username);
-			System.out.println("styleId: " + styleId);
-			System.out.println("quantity: " + cartQuantity);
+//			System.out.println("updateCartItemQuantity");
+//			System.out.println("username: " + username);
+//			System.out.println("styleId: " + styleId);
+//			System.out.println("quantity: " + cartQuantity);
 			connect();
 			em.getTransaction().begin();
 			CartItem ci = em.find(CartItem.class, new CartItemId(username, styleId));
-			System.out.println(ci.getCartQuantity());
 			ci.setCartQuantity(cartQuantity);
 			em.getTransaction().commit();
 			return 1;

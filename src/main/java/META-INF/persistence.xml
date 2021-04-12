@@ -3,9 +3,11 @@
 	<persistence-unit name="xyz">
 	<class>xyz.junjie.xu.compositeIds.CartItemId</class>
 	<class>xyz.junjie.xu.compositeIds.QuantityId</class>
+	<class>xyz.junjie.xu.compositeIds.ReviewId</class>
 		<class>xyz.junjie.xu.entities.CartItem</class>
 		<class>xyz.junjie.xu.entities.Product</class>
 		<class>xyz.junjie.xu.entities.Quantity</class>
+		<class>xyz.junjie.xu.entities.Review</class>
 		<class>xyz.junjie.xu.entities.Style</class>
 		<class>xyz.junjie.xu.entities.User</class>
 		<properties>

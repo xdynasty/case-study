@@ -23,28 +23,39 @@ import javax.persistence.Table;
 public class Style {
 	@Id
 	private int id;
+	
 	@ManyToOne
 	@JoinColumn(name="PRODUCT_ID")
 	private Product product;
+	
 	@Basic
+	@Column(nullable=false, length=50)
 	private String name;
+	
 	@Basic
 	@Column(name="PREVIEW_IMAGES")
 	private String[] previewImages;
+	
 	@Basic
+	@Column(nullable=false)
 	private String[] images;
+	
 	@Basic
+	@Column(nullable=false)
 	private double price;
+	
 	@OneToMany(mappedBy="style")
 	private List<Quantity> quantities;
-
+	
+	@OneToMany(mappedBy="style", targetEntity=xyz.junjie.xu.entities.Review.class)
+	private List<Review> reviews;
+	
 	public Style() {
 		super();
 	}
 
-	
 	public Style(int id, Product product, String name, String[] previewImages, String[] images, double price,
-			List<Quantity> quantities) {
+			List<Quantity> quantities, List<Review> reviews) {
 		super();
 		this.id = id;
 		this.product = product;
@@ -53,79 +64,72 @@ public class Style {
 		this.images = images;
 		this.price = price;
 		this.quantities = quantities;
+		this.reviews = reviews;
 	}
 
-
-	
 	public int getId() {
 		return id;
 	}
-
 
 	public void setId(int id) {
 		this.id = id;
 	}
 
-
 	public Product getProduct() {
 		return product;
 	}
-
 
 	public void setProduct(Product product) {
 		this.product = product;
 	}
 
-
 	public String getName() {
 		return name;
 	}
-
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
-
 	public String[] getPreviewImages() {
 		return previewImages;
 	}
-
 
 	public void setPreviewImages(String[] previewImages) {
 		this.previewImages = previewImages;
 	}
 
-
 	public String[] getImages() {
 		return images;
 	}
-
 
 	public void setImages(String[] images) {
 		this.images = images;
 	}
 
-
 	public double getPrice() {
 		return price;
 	}
-
 
 	public void setPrice(double price) {
 		this.price = price;
 	}
 
-
 	public List<Quantity> getQuantities() {
 		return quantities;
 	}
-
 
 	public void setQuantities(List<Quantity> quantities) {
 		this.quantities = quantities;
 	}
 
+	public List<Review> getReviews() {
+		return reviews;
+	}
+
+	public void setReviews(List<Review> reviews) {
+		this.reviews = reviews;
+	}
 
 	@Override
 	public int hashCode() {

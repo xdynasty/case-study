@@ -3,6 +3,7 @@ package xyz.junjie.xu.entities;
 import java.util.List;
 
 import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -21,13 +22,21 @@ import javax.persistence.Table;
 public class Product {
 	@Id
 	private int id;
+	
 	@Basic
+	@Column(nullable=false, length=100)
 	private String name;
+	
 	@Basic
+	@Column(nullable=false)
 	private String category;
+	
 	@Basic
+	@Column(nullable=false)
 	private String[] details;
+	
 	@Basic
+	@Column(nullable=false)
 	private String type;
 	
 	@OneToMany(mappedBy="product")

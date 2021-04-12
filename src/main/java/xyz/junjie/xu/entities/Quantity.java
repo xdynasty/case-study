@@ -23,6 +23,7 @@ import xyz.junjie.xu.compositeIds.QuantityId;
 public class Quantity {
 	@EmbeddedId
 	private QuantityId id;
+	
 	@Basic
 	@JoinColumn(name="STOCK_QUANTITY")
 	private int stockQuantity;

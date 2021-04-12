@@ -23,14 +23,19 @@ import xyz.junjie.xu.compositeIds.CartItemId;
 public class CartItem {
 	@EmbeddedId
 	private CartItemId id;
+	
 	@Basic
+	@Column(nullable=false)
 	private String size;
+	
 	@Basic
 	@Column(name="CART_QUANTITY")
 	private int cartQuantity;
+	
 	@MapsId("styleId")
 	@OneToOne
 	private Style style;
+	
 	@MapsId("username")
 	@ManyToOne
 	private User user;

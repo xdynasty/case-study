@@ -1,12 +1,15 @@
 package xyz.junjie.xu.main;
 
 import xyz.junjie.xu.compositeIds.QuantityId;
+import xyz.junjie.xu.compositeIds.ReviewId;
 import xyz.junjie.xu.daos.ProductDao;
 import xyz.junjie.xu.daos.QuantityDao;
+import xyz.junjie.xu.daos.ReviewDao;
 import xyz.junjie.xu.daos.StyleDao;
 import xyz.junjie.xu.daos.UserDao;
 import xyz.junjie.xu.entities.Product;
 import xyz.junjie.xu.entities.Quantity;
+import xyz.junjie.xu.entities.Review;
 import xyz.junjie.xu.entities.Style;
 import xyz.junjie.xu.entities.User;
 
@@ -172,107 +175,107 @@ public class MainRunner {
 						"https://case-study.s3.us-east-2.amazonaws.com/images/1/t1.jpeg",
 						"https://case-study.s3.us-east-2.amazonaws.com/images/1/t2.jpeg"
 				}, new String[] {
-						"https://case-study.s3.us-east-2.amazonaws.com/images/1/1.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/1/2.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/1/3.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/1/4.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/1/5.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/1/6.jpeg"}, 3234.30, null));
+						"https://case-study.s3.us-east-2.amazonaws.com/images/1/1.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/1/2.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/1/3.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/1/4.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/1/5.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/1/6.jpeg"}, 3234.30, null, null));
 		styleDao.addStyle(new Style(2, productDao.getProductById(2), "BLACK", 
 				new String[] {
 						"https://case-study.s3.us-east-2.amazonaws.com/images/2/t1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/2/t2.webp"
 				}, new String[] {
-						"https://case-study.s3.us-east-2.amazonaws.com/images/2/1.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/2/2.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/2/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/2/4.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/2/5.webp"}, 100, null));
+						"https://case-study.s3.us-east-2.amazonaws.com/images/2/1.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/2/2.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/2/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/2/4.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/2/5.webp"}, 100, null, null));
 		styleDao.addStyle(new Style(3, productDao.getProductById(3), "NAVY", 
 				new String[] {
 						"https://case-study.s3.us-east-2.amazonaws.com/images/3/t1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/3/t2.webp"
 				}, new String[] {
-						"https://case-study.s3.us-east-2.amazonaws.com/images/3/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/3/2.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/3/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/3/4.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/3/5.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/3/6.webp"}, 3355.50, null));
+						"https://case-study.s3.us-east-2.amazonaws.com/images/3/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/3/2.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/3/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/3/4.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/3/5.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/3/6.webp"}, 3355.50, null, null));
 		styleDao.addStyle(new Style(4, productDao.getProductById(3), "GREEN", 
 				new String[] {
 						"https://case-study.s3.us-east-2.amazonaws.com/images/4/t1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/4/t2.webp"
 				}, new String[] {
-						"https://case-study.s3.us-east-2.amazonaws.com/images/4/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/4/2.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/4/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/4/4.webp"}, 332.50, null));
+						"https://case-study.s3.us-east-2.amazonaws.com/images/4/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/4/2.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/4/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/4/4.webp"}, 332.50, null, null));
 		styleDao.addStyle(new Style(5, productDao.getProductById(4), "COGNAC", 
 				new String[] {
 						"https://xyz-images-bucket.s3.us-east-2.amazonaws.com/1/1.JPG", "https://xyz-images-bucket.s3.us-east-2.amazonaws.com/1/2.JPG"
 				}, new String[] {
-						"https://xyz-images-bucket.s3.us-east-2.amazonaws.com/1/1.JPG", "https://xyz-images-bucket.s3.us-east-2.amazonaws.com/1/3.JPG", "https://xyz-images-bucket.s3.us-east-2.amazonaws.com/1/5.JPG"}, 3250, null));
+						"https://xyz-images-bucket.s3.us-east-2.amazonaws.com/1/1.JPG", "https://xyz-images-bucket.s3.us-east-2.amazonaws.com/1/3.JPG", "https://xyz-images-bucket.s3.us-east-2.amazonaws.com/1/5.JPG"}, 3250, null, null));
 		styleDao.addStyle(new Style(6, productDao.getProductById(5), "BLACK", 
 				new String[] {
 						"https://case-study.s3.us-east-2.amazonaws.com/images/6/t1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/6/t2.webp"
 				}, new String[] {
-						"https://case-study.s3.us-east-2.amazonaws.com/images/6/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/6/2.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/6/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/6/4.webp"}, 254.50, null));
+						"https://case-study.s3.us-east-2.amazonaws.com/images/6/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/6/2.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/6/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/6/4.webp"}, 254.50, null, null));
 		styleDao.addStyle(new Style(7, productDao.getProductById(6), "BLACK", 
 				new String[] {
 						"https://case-study.s3.us-east-2.amazonaws.com/images/7/t1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/7/t2.webp"
 				}, new String[] {
-						"https://case-study.s3.us-east-2.amazonaws.com/images/7/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/7/2.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/7/3.webp"}, 23.40, null));
+						"https://case-study.s3.us-east-2.amazonaws.com/images/7/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/7/2.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/7/3.webp"}, 23.40, null, null));
 		styleDao.addStyle(new Style(8, productDao.getProductById(7), "BLACK", 
 				new String[] {
 						"https://case-study.s3.us-east-2.amazonaws.com/images/8/t1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/8/t2.webp"
 				}, new String[] {
-						"https://case-study.s3.us-east-2.amazonaws.com/images/8/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/8/2.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/8/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/8/4.webp"}, 350.45, null));
+						"https://case-study.s3.us-east-2.amazonaws.com/images/8/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/8/2.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/8/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/8/4.webp"}, 350.45, null, null));
 		styleDao.addStyle(new Style(9, productDao.getProductById(8), "PALM", 
 				new String[] {
 						"https://case-study.s3.us-east-2.amazonaws.com/images/9/t1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/9/t2.webp"
 				}, new String[] {
-						"https://case-study.s3.us-east-2.amazonaws.com/images/9/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/9/2.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/9/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/9/4.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/9/5.webp"}, 20.23, null));
+						"https://case-study.s3.us-east-2.amazonaws.com/images/9/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/9/2.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/9/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/9/4.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/9/5.webp"}, 20.23, null, null));
 		styleDao.addStyle(new Style(10, productDao.getProductById(9), "COGNAC", 
 				new String[] {
 						"https://case-study.s3.us-east-2.amazonaws.com/images/10/t1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/10/t2.webp"
 				}, new String[] {
-						"https://case-study.s3.us-east-2.amazonaws.com/images/10/1.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/10/2.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/10/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/10/4.webp"}, 332.42, null));
+						"https://case-study.s3.us-east-2.amazonaws.com/images/10/1.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/10/2.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/10/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/10/4.webp"}, 332.42, null, null));
 		styleDao.addStyle(new Style(11, productDao.getProductById(9), "BLACK", 
 				new String[] {
 						"https://case-study.s3.us-east-2.amazonaws.com/images/11/t1.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/11/t2.webp"
 				}, new String[] {
-						"https://case-study.s3.us-east-2.amazonaws.com/images/11/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/11/2.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/11/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/11/4.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/11/5.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/11/6.webp"}, 354.34, null));
+						"https://case-study.s3.us-east-2.amazonaws.com/images/11/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/11/2.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/11/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/11/4.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/11/5.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/11/6.webp"}, 354.34, null, null));
 		styleDao.addStyle(new Style(12, productDao.getProductById(10), "DEEP SEA BLUE", 
 				new String[] {
 						"https://case-study.s3.us-east-2.amazonaws.com/images/12/t1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/12/t2.webp"
 				}, new String[] {
-						"https://case-study.s3.us-east-2.amazonaws.com/images/12/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/12/2.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/12/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/12/4.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/12/5.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/12/6.webp"}, 35.30, null));
+						"https://case-study.s3.us-east-2.amazonaws.com/images/12/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/12/2.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/12/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/12/4.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/12/5.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/12/6.webp"}, 35.30, null, null));
 		styleDao.addStyle(new Style(13, productDao.getProductById(11), "WHITE", 
 				new String[] {
 						"https://case-study.s3.us-east-2.amazonaws.com/images/13/t1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/13/t2.webp"
 				}, new String[] {
-						"https://case-study.s3.us-east-2.amazonaws.com/images/13/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/13/2.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/13/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/13/4.webp"}, 4350.34, null));
+						"https://case-study.s3.us-east-2.amazonaws.com/images/13/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/13/2.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/13/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/13/4.webp"}, 4350.34, null, null));
 		styleDao.addStyle(new Style(14, productDao.getProductById(11), "BLACK", 
 				new String[] {
 						"https://case-study.s3.us-east-2.amazonaws.com/images/14/t1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/14/t2.webp"
 				}, new String[] {
-						"https://case-study.s3.us-east-2.amazonaws.com/images/14/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/14/2.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/14/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/14/4.webp"}, 310.32, null));
+						"https://case-study.s3.us-east-2.amazonaws.com/images/14/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/14/2.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/14/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/14/4.webp"}, 310.32, null, null));
 		styleDao.addStyle(new Style(15, productDao.getProductById(12), "WHITE", 
 				new String[] {
 						"https://case-study.s3.us-east-2.amazonaws.com/images/15/t1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/15/t2.webp"
 				}, new String[] {
-						"https://case-study.s3.us-east-2.amazonaws.com/images/15/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/15/2.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/15/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/15/4.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/15/5.webp"}, 350.87, null));
+						"https://case-study.s3.us-east-2.amazonaws.com/images/15/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/15/2.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/15/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/15/4.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/15/5.webp"}, 350.87, null, null));
 		styleDao.addStyle(new Style(16, productDao.getProductById(13), "NAVY", 
 				new String[] {
 						"https://case-study.s3.us-east-2.amazonaws.com/images/16/t1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/16/t2.webp"
 				}, new String[] {
-						"https://case-study.s3.us-east-2.amazonaws.com/images/16/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/16/2.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/16/3.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/16/4.jpeg"}, 350.32, null));
+						"https://case-study.s3.us-east-2.amazonaws.com/images/16/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/16/2.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/16/3.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/16/4.jpeg"}, 350.32, null, null));
 		styleDao.addStyle(new Style(17, productDao.getProductById(14), "GREY/BLACK", 
 				new String[] {
 						"https://case-study.s3.us-east-2.amazonaws.com/images/17/t1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/17/t2.webp"
 				}, new String[] {
-						"https://case-study.s3.us-east-2.amazonaws.com/images/17/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/17/2.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/17/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/17/4.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/17/5.webp"}, 350.46, null));
+						"https://case-study.s3.us-east-2.amazonaws.com/images/17/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/17/2.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/17/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/17/4.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/17/5.webp"}, 350.46, null, null));
 		styleDao.addStyle(new Style(18, productDao.getProductById(15), "STONEWASH", 
 				new String[] {
 						"https://case-study.s3.us-east-2.amazonaws.com/images/18/t1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/18/t2.webp"
 				}, new String[] {
-						"https://case-study.s3.us-east-2.amazonaws.com/images/18/1.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/18/2.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/18/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/18/4.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/18/5.webp"}, 832.87, null));
+						"https://case-study.s3.us-east-2.amazonaws.com/images/18/1.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/18/2.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/18/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/18/4.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/18/5.webp"}, 832.87, null, null));
 		styleDao.addStyle(new Style(19, productDao.getProductById(16), "WHITE", 
 				new String[] {
 						"https://case-study.s3.us-east-2.amazonaws.com/images/19/t1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/19/t2.webp"
 				}, new String[] {
-						"https://case-study.s3.us-east-2.amazonaws.com/images/19/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/19/2.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/19/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/19/4.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/19/5.webp"}, 325.53, null));
+						"https://case-study.s3.us-east-2.amazonaws.com/images/19/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/19/2.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/19/3.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/19/4.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/19/5.webp"}, 325.53, null, null));
 		styleDao.addStyle(new Style(20, productDao.getProductById(17), "BEIGE", 
 				new String[] {
 						"https://case-study.s3.us-east-2.amazonaws.com/images/20/t1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/20/t2.webp"
 				}, new String[] {
-						"https://case-study.s3.us-east-2.amazonaws.com/images/20/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/20/2.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/20/3.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/20/4.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/20/5.webp"}, 545.43, null));
+						"https://case-study.s3.us-east-2.amazonaws.com/images/20/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/20/2.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/20/3.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/20/4.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/20/5.webp"}, 545.43, null, null));
 		styleDao.addStyle(new Style(21, productDao.getProductById(17), "BLACK", 
 				new String[] {
 						"https://case-study.s3.us-east-2.amazonaws.com/images/21/t1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/21/t2.webp"
 				}, new String[] {
-						"https://case-study.s3.us-east-2.amazonaws.com/images/21/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/21/2.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/21/3.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/21/4.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/21/5.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/21/6.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/21/7.webp"}, 150.23, null));
+						"https://case-study.s3.us-east-2.amazonaws.com/images/21/1.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/21/2.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/21/3.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/21/4.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/21/5.jpeg", "https://case-study.s3.us-east-2.amazonaws.com/images/21/6.webp", "https://case-study.s3.us-east-2.amazonaws.com/images/21/7.webp"}, 150.23, null, null));
 		
 		QuantityDao quantityDao = new QuantityDao();
 		quantityDao.addQuantity(new Quantity(new QuantityId(1, "M"), 4, styleDao.getStyleById(1)));
@@ -316,6 +319,10 @@ public class MainRunner {
 		UserDao userDao = new UserDao();
 		userDao.addUser(new User("junjie325@gmail.com", "pass123", null));
 		userDao.addUser(new User("xyz@gmail.com", "123", null));
+		
+		ReviewDao reviewDao = new ReviewDao();
+		reviewDao.addReview(new Review(new ReviewId(3, "junjie325@gmail.com"), "THIS PRODUCT IS VERY GOOD", userDao.getUserByUsername("junjie325@gmail.com"), styleDao.getStyleById(3)));
+		reviewDao.addReview(new Review(new ReviewId(3, "xyz@gmail.com"), "THIS PRODUCT IS NOT AS GOOD AS THE PERSON BELOW SAID", userDao.getUserByUsername("xyz@gmail.com"), styleDao.getStyleById(3)));
 //		CartItemDao cartItemDao = new CartItemDao();
 //		 cartItemDao.addCartItem(new CartItem(new CartItemId("junjie325@gmail.com", 3), "8.5", 1, styleDao.getStyleById(3), userDao.getUser("junjie325@gmail.com"), quantityDao.getQuantityByStyleIdAndSize(3, "8.5")));
 //		 cartItemDao.addCartItem(new CartItem(new CartItemId("junjie325@gmail.com", 5), "OS", 1, styleDao.getStyleById(5), userDao.getUser("junjie325@gmail.com"), quantityDao.getQuantityByStyleIdAndSize(5, "OS")));

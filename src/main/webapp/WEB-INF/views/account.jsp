@@ -20,6 +20,7 @@
     <link href="<c:url value="/resources/css/button.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/css/navbar.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/css/footer.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/button.css" />" rel="stylesheet">
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="

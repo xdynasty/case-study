@@ -28,7 +28,7 @@ class TestCartItemDao {
 				new String[] {
 						"https://xyz-images-bucket.s3.us-east-2.amazonaws.com/1/1.JPG", "https://xyz-images-bucket.s3.us-east-2.amazonaws.com/1/2.JPG"
 				}, new String[] {
-						"https://xyz-images-bucket.s3.us-east-2.amazonaws.com/1/1.JPG", "https://xyz-images-bucket.s3.us-east-2.amazonaws.com/1/3.JPG", "https://xyz-images-bucket.s3.us-east-2.amazonaws.com/1/5.JPG"}, 3250, null), new User("junjie325@gmail.com", "pass123", null)));
+						"https://xyz-images-bucket.s3.us-east-2.amazonaws.com/1/1.JPG", "https://xyz-images-bucket.s3.us-east-2.amazonaws.com/1/3.JPG", "https://xyz-images-bucket.s3.us-east-2.amazonaws.com/1/5.JPG"}, 3250, null, null), new User("junjie325@gmail.com", "pass123", null)));
 		Assertions.assertEquals(expected, actual);
 	}
 

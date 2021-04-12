@@ -2,6 +2,7 @@ package xyz.junjie.xu.entities;
 
 import java.util.List;
 import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -20,7 +21,9 @@ import javax.persistence.Table;
 public class User{
 	@Id
 	private String username;
+	
 	@Basic
+	@Column(nullable=false)
 	private String password;
 	
 	@OneToMany(mappedBy="user")
@@ -28,7 +31,6 @@ public class User{
 
 	public User() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public User(String username, String password, List<CartItem> cartItems) {

@@ -17,9 +17,9 @@ public class QuantityDao extends AbstractDao implements QuantityI {
 	@Override
 	public Quantity getQuantityByStyleIdAndSize(int styleId, String size) {
 		try {
-			System.out.println("getQuantityByStyleIdAndSize");
-			System.out.println("styleId: " + styleId);
-			System.out.println("size: " + size);
+//			System.out.println("getQuantityByStyleIdAndSize");
+//			System.out.println("styleId: " + styleId);
+//			System.out.println("size: " + size);
 			connect();
 			em.getTransaction().begin();
 			Quantity q = em.find(Quantity.class, new QuantityId(styleId, size));
@@ -44,10 +44,10 @@ public class QuantityDao extends AbstractDao implements QuantityI {
 	@Override
 	public int updateQuantityByStyleIdAndSize(int styleId, String size, int stockQuantity) {
 		try {
-			System.out.println("updateQuantityByStyleIdAndSize");
-			System.out.println("styleId: " + styleId);
-			System.out.println("size: " + size);
-			System.out.println("quantity: " + stockQuantity);
+//			System.out.println("updateQuantityByStyleIdAndSize");
+//			System.out.println("styleId: " + styleId);
+//			System.out.println("size: " + size);
+//			System.out.println("quantity: " + stockQuantity);
 			connect();
 			em.getTransaction().begin();
 			Quantity q = em.find(Quantity.class, new QuantityId(styleId, size));
@@ -73,9 +73,9 @@ public class QuantityDao extends AbstractDao implements QuantityI {
 	@Override
 	public int removeQuantityByStyleIdAndSize(int styleId, String size) {
 		try {
-			System.out.println("removeQuantityByStyleIdAndSize");
-			System.out.println("styleId: " + styleId);
-			System.out.println("size: " + size);
+//			System.out.println("removeQuantityByStyleIdAndSize");
+//			System.out.println("styleId: " + styleId);
+//			System.out.println("size: " + size);
 			connect();
 			em.getTransaction().begin();
 			Quantity q = em.find(Quantity.class, new QuantityId(styleId, size));
@@ -100,8 +100,8 @@ public class QuantityDao extends AbstractDao implements QuantityI {
 	@Override
 	public int addQuantity(Quantity quantity) {
 		try {
-			System.out.println("addQuantity");
-			System.out.println("quantity: " + quantity);
+//			System.out.println("addQuantity");
+//			System.out.println("quantity: " + quantity);
 			connect();
 			em.getTransaction().begin();
 			em.persist(quantity);

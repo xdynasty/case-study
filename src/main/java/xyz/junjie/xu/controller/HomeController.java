@@ -17,10 +17,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
+import xyz.junjie.xu.compositeIds.ReviewId;
 import xyz.junjie.xu.daos.CartItemDao;
+import xyz.junjie.xu.daos.ReviewDao;
 import xyz.junjie.xu.daos.StyleDao;
 import xyz.junjie.xu.daos.UserDao;
 import xyz.junjie.xu.entities.CartItem;
+import xyz.junjie.xu.entities.Review;
 import xyz.junjie.xu.entities.Style;
 import xyz.junjie.xu.entities.User;
 import xyz.junjie.xu.exceptions.InvalidPasswordException;
@@ -161,5 +164,21 @@ public class HomeController {
 		CartItemService cis = new CartItemService();
 		cis.updateQuantity(username, styleId, newQuantity);
 		response.setStatus(HttpServletResponse.SC_OK);
+	}
+	
+	@PostMapping("/add_review")
+	public String addReviewHandler(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
+		String text = request.getParameter("text");
+		StyleDao styleDao = new StyleDao();
+		User user = (User) session.getAttribute("user");
+		int styleId = Integer.parseInt(request.getParameter("styleId"));
+		System.out.println("/add_review");
+		System.out.println(user.getUsername());
+		System.out.println(styleId);
+		Review review = new Review(new ReviewId(styleId, user.getUsername()), text, user, styleDao.getStyleById(styleId));
+		ReviewDao reviewDao = new ReviewDao();
+		reviewDao.addReview(review);
+		System.out.println(text);
+		return "redirect:/product/" + styleId;
 	}
 }

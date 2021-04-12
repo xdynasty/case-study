@@ -20,6 +20,7 @@
     <link href="<c:url value="/resources/css/product.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/css/navbar.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/css/footer.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/button.css" />" rel="stylesheet">
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
@@ -126,6 +127,34 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="row">
+      <div class="col-md-2"></div>
+      	<div class="col">
+      		<section id="reviews">
+      		
+      		<h2 style="text-align: center">Reviews</h2>
+      		<jsp:useBean id="reviewDao" class="xyz.junjie.xu.daos.ReviewDao"/>
+      		
+      		<c:if test="${not empty sessionScope.user and empty reviewDao.getReviewByStyleIdAndUsername(style.id,sessionScope.user.username)}">
+      			<form action="${pageContext.request.contextPath}/add_review" method="POST">
+      				<label for="reviewTextarea" class="form-label">ADD YOUR REVIEW</label>
+  					<textarea class="form-control" id="reviewTextarea" rows="3" name="text"></textarea>
+  					<input type="hidden" name="styleId" value="${style.id}"/>
+  					<button type="submit" class="btn btn-secondary">SUBMIT</button>
+      			</form>
+      		</c:if>
+      			<c:forEach items="${style.reviews}" var="review">
+      			<div class="review">
+      				<h3>${review.user.username}</h3>
+      				<p>${review.dateCreated}</p>
+      				<p>${review.text}</p>
+      			</div>
+      	
+      			</c:forEach>
+      		</section>
+      	</div>
+      	<div class="col-md-2"></div>
       </div>
     </div>
 <jsp:include page="./footer.jsp"/>
